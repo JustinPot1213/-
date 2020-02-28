@@ -1,0 +1,14 @@
+C:\Users\JustinPot\source\repos\Homework_1\Homework_1\bin\Debug\Homework_1.exe.config
+C:\Users\JustinPot\source\repos\Homework_1\Homework_1\bin\Debug\Homework_1.exe
+C:\Users\JustinPot\source\repos\Homework_1\Homework_1\bin\Debug\Homework_1.pdb
+C:\Users\JustinPot\source\repos\Homework_1\Homework_1\obj\Debug\Homework_1.csprojAssemblyReference.cache
+C:\Users\JustinPot\source\repos\Homework_1\Homework_1\obj\Debug\Homework_1.csproj.CoreCompileInputs.cache
+C:\Users\JustinPot\source\repos\Homework_1\Homework_1\obj\Debug\Homework_1.exe
+C:\Users\JustinPot\source\repos\Homework_1\Homework_1\obj\Debug\Homework_1.pdb
+D:\大学课程集合\大二下\软件构造基础\Fundamentals-of-software-construction\Homework_1\Homework_1\bin\Debug\Homework_1.exe.config
+D:\大学课程集合\大二下\软件构造基础\Fundamentals-of-software-construction\Homework_1\Homework_1\bin\Debug\Homework_1.exe
+D:\大学课程集合\大二下\软件构造基础\Fundamentals-of-software-construction\Homework_1\Homework_1\bin\Debug\Homework_1.pdb
+D:\大学课程集合\大二下\软件构造基础\Fundamentals-of-software-construction\Homework_1\Homework_1\obj\Debug\Homework_1.csprojAssemblyReference.cache
+D:\大学课程集合\大二下\软件构造基础\Fundamentals-of-software-construction\Homework_1\Homework_1\obj\Debug\Homework_1.csproj.CoreCompileInputs.cache
+D:\大学课程集合\大二下\软件构造基础\Fundamentals-of-software-construction\Homework_1\Homework_1\obj\Debug\Homework_1.exe
+D:\大学课程集合\大二下\软件构造基础\Fundamentals-of-software-construction\Homework_1\Homework_1\obj\Debug\Homework_1.pdb
