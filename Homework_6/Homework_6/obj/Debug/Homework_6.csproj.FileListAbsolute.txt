@@ -1,0 +1,7 @@
+D:\大学课程集合\大二下\软件构造基础\Fundamentals-of-software-construction\Homework_6\Homework_6\bin\Debug\Homework_5.exe.config
+D:\大学课程集合\大二下\软件构造基础\Fundamentals-of-software-construction\Homework_6\Homework_6\bin\Debug\Homework_5.exe
+D:\大学课程集合\大二下\软件构造基础\Fundamentals-of-software-construction\Homework_6\Homework_6\bin\Debug\Homework_5.pdb
+D:\大学课程集合\大二下\软件构造基础\Fundamentals-of-software-construction\Homework_6\Homework_6\obj\Debug\Homework_6.csproj.CoreCompileInputs.cache
+D:\大学课程集合\大二下\软件构造基础\Fundamentals-of-software-construction\Homework_6\Homework_6\obj\Debug\Homework_5.exe
+D:\大学课程集合\大二下\软件构造基础\Fundamentals-of-software-construction\Homework_6\Homework_6\obj\Debug\Homework_5.pdb
+D:\大学课程集合\大二下\软件构造基础\Fundamentals-of-software-construction\Homework_6\Homework_6\obj\Debug\Homework_6.csprojAssemblyReference.cache
