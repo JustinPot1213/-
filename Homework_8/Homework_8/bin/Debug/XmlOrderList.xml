@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<ArrayOfOrder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Order OrderID="2103593770" SumOfCost="2000">
+    <OrderItems>
+      <OrderItem Num="1" SumOfPrice="2000">
+        <ThisItem Name="switch" Price="2000" />
+      </OrderItem>
+    </OrderItems>
+    <OrderBuyer Name="GZ" />
+  </Order>
+  <Order OrderID="2103593790" SumOfCost="400">
+    <OrderItems>
+      <OrderItem Num="1" SumOfPrice="400">
+        <ThisItem Name="Animal Crossing" Price="400" />
+      </OrderItem>
+    </OrderItems>
+    <OrderBuyer Name="JP" />
+  </Order>
+  <Order OrderID="2103593800" SumOfCost="2800">
+    <OrderItems>
+      <OrderItem Num="1" SumOfPrice="2000">
+        <ThisItem Name="switch" Price="2000" />
+      </OrderItem>
+      <OrderItem Num="2" SumOfPrice="800">
+        <ThisItem Name="Animal Crossing" Price="400" />
+      </OrderItem>
+    </OrderItems>
+    <OrderBuyer Name="JP" />
+  </Order>
+  <Order OrderID="2104052600" SumOfCost="466400">
+    <OrderItems>
+      <OrderItem Num="11" SumOfPrice="22000">
+        <ThisItem Name="switch" Price="2000" />
+      </OrderItem>
+      <OrderItem Num="1111" SumOfPrice="444400">
+        <ThisItem Name="Animal Crossing" Price="400" />
+      </OrderItem>
+    </OrderItems>
+    <OrderBuyer Name="GZ" />
+  </Order>
+</ArrayOfOrder>

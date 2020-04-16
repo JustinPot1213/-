@@ -1,0 +1,15 @@
+D:\大学课程集合\大二下\软件构造基础\Fundamentals-of-software-construction\Homework_8\Homework_8\bin\Debug\Homework_8.exe.config
+D:\大学课程集合\大二下\软件构造基础\Fundamentals-of-software-construction\Homework_8\Homework_8\bin\Debug\Homework_8.exe
+D:\大学课程集合\大二下\软件构造基础\Fundamentals-of-software-construction\Homework_8\Homework_8\bin\Debug\Homework_8.pdb
+D:\大学课程集合\大二下\软件构造基础\Fundamentals-of-software-construction\Homework_8\Homework_8\bin\Debug\Homework_5.exe
+D:\大学课程集合\大二下\软件构造基础\Fundamentals-of-software-construction\Homework_8\Homework_8\bin\Debug\Homework_5.pdb
+D:\大学课程集合\大二下\软件构造基础\Fundamentals-of-software-construction\Homework_8\Homework_8\bin\Debug\Homework_5.exe.config
+D:\大学课程集合\大二下\软件构造基础\Fundamentals-of-software-construction\Homework_8\Homework_8\obj\Debug\Homework_8.csprojAssemblyReference.cache
+D:\大学课程集合\大二下\软件构造基础\Fundamentals-of-software-construction\Homework_8\Homework_8\obj\Debug\Homework_8.Properties.Resources.resources
+D:\大学课程集合\大二下\软件构造基础\Fundamentals-of-software-construction\Homework_8\Homework_8\obj\Debug\Homework_8.csproj.GenerateResource.cache
+D:\大学课程集合\大二下\软件构造基础\Fundamentals-of-software-construction\Homework_8\Homework_8\obj\Debug\Homework_8.csproj.CoreCompileInputs.cache
+D:\大学课程集合\大二下\软件构造基础\Fundamentals-of-software-construction\Homework_8\Homework_8\obj\Debug\Homework_8.csproj.CopyComplete
+D:\大学课程集合\大二下\软件构造基础\Fundamentals-of-software-construction\Homework_8\Homework_8\obj\Debug\Homework_8.exe
+D:\大学课程集合\大二下\软件构造基础\Fundamentals-of-software-construction\Homework_8\Homework_8\obj\Debug\Homework_8.pdb
+D:\大学课程集合\大二下\软件构造基础\Fundamentals-of-software-construction\Homework_8\Homework_8\obj\Debug\Homework_8.OrderServiceForm.resources
+D:\大学课程集合\大二下\软件构造基础\Fundamentals-of-software-construction\Homework_8\Homework_8\obj\Debug\Homework_8.SubForm.resources
