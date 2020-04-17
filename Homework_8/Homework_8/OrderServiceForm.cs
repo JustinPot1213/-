@@ -158,12 +158,15 @@ namespace Homework_8
         {
             SubForm sub = new SubForm(Buyers,Items);
             sub.ShowDialog();
-            foreach (Order o in sub.results)
+            if (sub.DialogResult == DialogResult.OK)
             {
-                orderService.AddOrder(o);
+                foreach (Order o in sub.results)
+                {
+                    orderService.AddOrder(o);
+                }
+                orderService.OrderBy((Order o_1, Order o_2) => (int)(o_1.OrderID - o_2.OrderID));
+                orderBindingSource.ResetBindings(false);
             }
-            orderService.OrderBy((Order o_1, Order o_2) => (int)(o_1.OrderID - o_2.OrderID));
-            orderBindingSource.ResetBindings(false);
         }
 
         private void modifyButton_Click(object sender, EventArgs e)
@@ -176,13 +179,16 @@ namespace Homework_8
                 Items = Items
             };
             sub.ShowDialog();
-            orderBindingSource.Remove(orderBindingSource.Current);
-            foreach(Order o in sub.results)
+            if (sub.DialogResult == DialogResult.OK)
             {
-                orderService.AddOrder(o);
+                orderBindingSource.Remove(orderBindingSource.Current);
+                foreach (Order o in sub.results)
+                {
+                    orderService.AddOrder(o);
+                }
+                orderService.OrderBy((Order o_1, Order o_2) => (int)(o_1.OrderID - o_2.OrderID));
+                orderBindingSource.ResetBindings(false);
             }
-            orderService.OrderBy((Order o_1, Order o_2) => (int)(o_1.OrderID - o_2.OrderID));
-            orderBindingSource.ResetBindings(false);
         }
     }
 }
