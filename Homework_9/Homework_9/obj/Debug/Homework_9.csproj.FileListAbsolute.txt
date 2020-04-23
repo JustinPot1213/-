@@ -1,0 +1,10 @@
+D:\大学课程集合\大二下\软件构造基础\Fundamentals-of-software-construction\Homework_9\Homework_9\obj\Debug\Homework_9.csprojAssemblyReference.cache
+D:\大学课程集合\大二下\软件构造基础\Fundamentals-of-software-construction\Homework_9\Homework_9\obj\Debug\Homework_9.Properties.Resources.resources
+D:\大学课程集合\大二下\软件构造基础\Fundamentals-of-software-construction\Homework_9\Homework_9\obj\Debug\Homework_9.csproj.GenerateResource.cache
+D:\大学课程集合\大二下\软件构造基础\Fundamentals-of-software-construction\Homework_9\Homework_9\obj\Debug\Homework_9.csproj.CoreCompileInputs.cache
+D:\大学课程集合\大二下\软件构造基础\Fundamentals-of-software-construction\Homework_9\Homework_9\bin\Debug\Homework_9.exe.config
+D:\大学课程集合\大二下\软件构造基础\Fundamentals-of-software-construction\Homework_9\Homework_9\bin\Debug\Homework_9.exe
+D:\大学课程集合\大二下\软件构造基础\Fundamentals-of-software-construction\Homework_9\Homework_9\bin\Debug\Homework_9.pdb
+D:\大学课程集合\大二下\软件构造基础\Fundamentals-of-software-construction\Homework_9\Homework_9\obj\Debug\Homework_9.CrawlerForm.resources
+D:\大学课程集合\大二下\软件构造基础\Fundamentals-of-software-construction\Homework_9\Homework_9\obj\Debug\Homework_9.exe
+D:\大学课程集合\大二下\软件构造基础\Fundamentals-of-software-construction\Homework_9\Homework_9\obj\Debug\Homework_9.pdb

@@ -1,0 +1,431 @@
+﻿<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<style>
+	html,body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, address, code,em, img, q, dl, dt, dd, ol, ul, li, form, label, table, caption, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+img{border:none;}
+li{list-style:none;}
+table{ border-collapse:collapse; width:100%;}
+body{ font-family: Arial,'����'; font-size:14px; color:#000; background-color:#FFF;}
+a{ text-decoration:none;color:#000;}
+a:hover{color:red; text-decoration:underline;}
+a:active{color:green;}
+
+.hide{ display:none;}
+.gray-bg{ background-color:#EFEDED;}
+.em{color:#054da1;}
+.cls:after{content:"";display:block;height:0;clear:both;visibility:hidden;}
+.cls{zoom:1;}
+/*---all---*/
+.hd,.bd,.ft{text-align:center;}
+.hd{border-bottom:2px solid #32AF00;background:url(http://www.hao123.com/redian/images/m-hd-main-bg.png) repeat-x;height:89px;}
+.hd-inner{width:960px;margin:0 auto;position:relative;}
+.ft{ text-align:center; color:#999; font-size:12px; margin-top:15px; padding-bottom:15px;}
+
+.searchfod1 {font-weight: bold; color: #05974c; text-align:center; width:49px; font-size:14px}
+.searchfod2 {cursor: pointer; text-align:center; width:49px; font-size:14px}
+
+.logo{position:absolute; top:20px; left:0;}
+.m-hd-search{position:absolute; top:42px; left:240px;}
+.m-hd-search_color_gray{ color:#CECECE;}
+.m-hd-search_d{ display:block; background:url(http://www.hao123.com/redian/images/m-hd-search-decorated-bg.png) no-repeat; height:28px; width:2px;}/*d-> decorated*/
+.m-hd-search_text{background:url(http://www.hao123.com/redian/images/m-hd-search-text-bg.png) repeat-x; width:342px; outline:none; padding:7px 0px 6px 7px;border:none; height:28px}
+.m-hd-search_btn{ height:28px; width:95px;background:url(http://www.hao123.com/redian/images/m-hd-search-btn-bg.png) no-repeat; border:none; outline:none; cursor:pointer;}/*btn-button*/
+.m-hd-search_table{ width:auto;}
+
+.search-list{position:absolute;left:240px;top:20px;}
+.search-list li{float:left;}
+
+.ft .links{height:24px;}
+.ft .links a{color:#666;}
+.ft .feedback a{color:#0053a5;}
+/*---content---*/
+.main{width:960px;text-align:left;margin:15px auto 0;color:#666;font-size:14px;}
+.topbar{margin:8px 0;font-size:12px;}
+.content{width:958px;border:solid 1px #dfdfe0;border-top:0;}
+.location{float:left;}
+.tool-box{float:right;}
+.tool-box span,.tool-box a{display:inline-block;padding:0 5px 0 20px;background:url(http://www.hao123.com/icon.png) no-repeat;}
+.tool-box .set-home{background-position:0 -40px;}
+.tool-box .response{background-position:6px -70px;padding-left:24px;}
+.tool-box .font{background-position:8px -101px;}
+
+
+.item-content{padding:0 70px 10px;}
+.item-title{height:39px;line-height:38px;font-size:14px;font-weight:bold;background:url(http://www.hao123.com/redian/images/bg_sprites.png) repeat-x;}
+.item-title a{float: right; margin-right:8px; font-weight:normal; color:#0053A5;}
+.item-title a:hover{ color:#FF3300;}
+.item-inner{padding-top:15px;}
+.item-float{width:400px; float:left;}
+.item-inner a{font-weight:normal; color:#0053A5;border:1px solid #fff;}
+.item-inner a:hover{ color:#FF3300;}
+
+.item-inner-title{margin-bottom:10px;}
+.item-info{text-indent:18px;}
+.sort{color:#43ba47;font-size:18px;font-weight:bold;font-family:impact;padding-right:5px;}
+a.link-img{display:inline-block;vertical-align:middle;text-indent:-999em;height:32px;width:177px;background:url(http://www.hao123.com/redian/images/bg_sprites.png) no-repeat 0 -49px;}
+a.link-img:hover{background:url(http://www.hao123.com/redian/images/bg_sprites.png) no-repeat 0 -91px;}
+
+
+
+.icon-title{display:inline-block;float:left;height:38px;width:45px;background:url(http://www.hao123.com/redian/images/icon.png) no-repeat 13px 8px;}
+	</style>
+<base target="_blank">
+<title>hao123��ַ֮�ң�������ҳ���ֵ���������� </title>
+<script src="http://www.hao123.com/js/base.js"></script>
+<script src="http://www.hao123.com/js/config_201106211200.js"></script>
+<script src="http://www.hao123.com/js/usertrack.js"></script>
+</head>
+<body>
+<SCRIPT  language=javascript>
+	var haoCurrHighLight = document.getElementById("haoweb");
+	function trim(str){
+		return str.replace(/(^\s*)|(\s*$)/g, "");
+	}
+	function setStyle(a,b){
+		var c=document.styleSheets[0];
+		if(c.addRule){
+		c.addRule(a,b);
+		}else if(c.insertRule){
+		c.insertRule(a+" { "+b+" }",c.cssRules.length);
+		}}
+	function haoValidate(source){
+		wval = trim(f.word.value);
+		if (f.sc.value=="post")
+		{
+			f.kw.value=f.word.value
+			f.ct.value=""
+			f.tn.value=""
+			f.rn.value=""
+			f.lm.value=""
+			f.rs2.value=0
+			f.myselectvalue.value=1
+			f.ie.value=""
+			f.cl.value=""
+			f.z.value=""
+			f.from.value=""
+		  }
+		if (f.sc.value=="img")
+		{
+			f.ct.value=201326592
+			f.lm.value=-1
+			f.cl.value=2
+			f.tn.value="baiduimage"
+			f.pv.value=""
+			f.rs2.value=""
+			f.myselectvalue.value=""
+			f.ie.value=""
+			f.z.value=0
+			f.rn.value=""
+			f.from.value=""
+			f.f.value=""
+			}
+		if (f.sc.value=="zhidao")
+		{
+			f.ct.value=17
+			f.tn.value="ikaslist"
+			f.rn.value=10
+			f.lm.value=""
+			f.cl.value=""
+			f.ie.value=""
+			f.rs2.value=""
+			f.f.value=""
+			f.myselectvalue.value=""
+			f.z.value=""
+			f.from.value=""
+			}
+		if (f.sc.value=="web")
+		{
+			f.cl.value=3
+			f.tn.value="hao123"
+			f.ct.value=0
+			f.ie.value="gb2312"
+			f.myselectvalue.value=""
+			f.rn.value=""
+			f.rs2.value=""
+			f.z.value=""
+			f.from.value=""
+			f.lm.value=""
+			}
+		if (f.sc.value=="mp3")
+		{
+			f.ct.value=134217728
+			f.lm.value=-1
+			f.rn.value=""
+			f.cl.value=""
+			f.tn.value="baidump3"
+			f.f.value="ms"
+			f.myselectvalue.value=""
+			f.ie.value="gb2312"
+			f.z.value=""
+			f.from.value=""
+			}
+		if (f.sc.value=="news")
+		{
+			f.tn.value="news"
+			f.cl.value=2
+			f.rn.value=20
+			f.ct.value=0
+			f.z.value=""
+			f.from.value="news"
+			f.ie.value=""
+			f.myselectvalue.value=""
+			f.lm.value=""
+			f.rs2.value=""
+			}
+			return true;
+	}
+	function haoSubSearch(sc){
+		changePage(sc);
+		if(sc != "baidu"){
+			if(sc == "post")
+			{
+				f.action = "http://tieba.baidu.com/f";
+				
+			}
+			else if(sc == "zhidao")
+			{
+				f.action = "http://zhidao.baidu.com/q";
+				
+			}
+			else if(sc == "mp3")
+			{
+				f.action = "http://mp3.baidu.com/m";
+				
+			}
+			else if(sc == "img")
+			{
+				f.action = "http://image.baidu.com/i";
+				
+			}
+			else if(sc == "news")
+			{
+				f.action = "http://news.baidu.com/ns";
+				
+			}
+			else if(sc == "video")
+			{
+				f.action = "http://video.baidu.com/v";
+				
+			}
+			else
+			{
+				f.action = "http://www.baidu.com/s";
+				
+			}
+			f.sc.value = sc;
+		}
+		else{
+			f.sc.value = "post";
+			haoGoSoba();
+		}
+	}
+
+	function haoGoSoba(){
+
+		f.action = "http://www.baidu.com/s";
+		f.kw.value = f.word.value;
+	}
+	function G(id)
+	{
+	 return document.getElementById(id);
+	}
+	function changePage(sc){
+		if(haoCurrHighLight == null){
+			haoCurrHighLight = document.getElementById("haoweb");
+		}
+		haoCurrHighLight.className = "searchfod2";
+		haoCurrHighLight = document.getElementById("hao"+sc);
+		haoCurrHighLight.className = "searchfod1";
+		document.f.word.focus()
+		 f.word.value="";
+	}
+	function isSoba(){
+		if(haoCurrHighLight == document.getElementById("haosoba")){
+			haoGoSoba();
+			return true;
+		}
+		else{
+			return true;
+		}
+	}
+	function goSearch(){
+		if(!haoValidate(1))
+		{
+				return false;
+				}
+		else{
+		 return false;
+		 }
+	}
+
+</SCRIPT>
+<div class="hd">
+	<div class="hd-inner">
+		 <div class="logo"><a href="http://www.hao123.com" target="_self" class="m"><img src="http://www.hao123.com/redian/images/logo_new.gif" alt="hao123��ַ֮��www.hao123.com" border="0"></a></div>
+		 <div class="search">
+				<ul class="search-list"><li  valign=bottom class=searchfod1 id=haoweb onClick="haoSubSearch('web');goSearch()">��ҳ</li><li valign=bottom class=searchfod2 id=haomp3 onClick="haoSubSearch('mp3');goSearch()">MP3</li> <li width="4"></li><li valign=bottom   class=searchfod2 id=haoimg onClick="haoSubSearch('img');goSearch()">ͼƬ</li><li valign=bottom class=searchfod2 id=haopost onClick="haoSubSearch('post');goSearch()">����</li><li  valign=bottom class=searchfod2 id=haozhidao onClick="haoSubSearch('zhidao');goSearch()">֪��</li><li  valign=bottom class=searchfod2 id=haonews onClick="haoSubSearch('news');goSearch()">����</li><li valign=bottom class=searchfod2 id=haovideo onClick="haoSubSearch('video');goSearch()">��Ƶ</li><li  width=240 valign=bottom> </li></ul>
+				<form onSubmit="return haoValidate();" action=http://www.baidu.com/s name=f id="search-form" target="_blank" class="m-hd-search">
+			  	   <table class="m-hd-search_table">
+					  <tbody><tr>
+					    <td><span class="m-hd-search_d"></span></td>
+	   					<td><input type="text" tabindex="1" id="kww" name="word" autocomplete="off" class="m-hd-search_text kw" value=""></td>
+    					<td><input type="submit" tabindex="2" class="m-hd-search_btn" value="" id="search-btn" class="sb"></td>
+  					  </tr>
+					</tbody></table>
+                    <div id="search-args" style="display:none">
+                        <input type="hidden" name="kw">
+						<input type="hidden" name="sc" value="web">
+						<input type="hidden" value="3" name="cl">
+						<input type="hidden" value="hao123" name="tn">
+						<input type="hidden" name="ct" value="0">
+						<input type="hidden" name="rn" value="">
+						<input type="hidden" name="lm" value="">
+						<input type="hidden" name="boxpos" value="hao123-netbuy">
+						<input type="hidden" name="ie" value="gb2312">
+						<input type="hidden" name="rs2" value="">
+						<input type="hidden" name="myselectvalue" value="">
+						<input type="hidden" name="f" value="ms">
+						<input type="hidden" name="pv">
+						<input type="hidden" name="z" value="">
+						<input type="hidden" name="from" value="">
+                    </div>
+			  </form>
+		</div>
+	</div>
+</div>
+
+  <div class="bd">
+	<div class="main">
+		<div class="topbar cls">
+			<div class="location">��ǰλ�ã�<a href="http://www.hao123.com" class="em">��ҳ</a>&nbsp;>&nbsp;<span class="em">����ҳ���ֵ����������</span></div>
+			<div class="tool-box"><a href="http://feedback.hao123.com/?catalog_id=3" class="response">�������</a></div>
+		</div>
+		
+		<div class="content">
+			<div class="item">
+				
+				<h3 class="item-title" style="overflow:hidden; padding-left:40px;">����</h3>
+				<div class="item-content" style="overflow:hidden; padding-bottom:10px;line-height:30px;">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;�������û���ӳ��hao123���ֵ�����档<b> �ڴ�֣��������hao123ʼ�������õ��û�����Ϊ����׼�򣬾��������κ���ʽ�ĵ������ƻ��û�����Ĺ�档</b>  ���������������ĵ��Ա���װ�˵����������Ӫ�̽ٳ���Ϊ���������������������ʹ�õĵ�����������棬�밴���·������ã����Ƿ��ܽ����
+
+				</div>
+				
+				
+
+			</div>
+			
+			
+			<div class="item" style="clear:both;">
+				<h3 class="item-title" id="ver"><span class="icon-title"></span>������Ӫ�̣����š���ͨ����ͨ�ȣ��ٳ���Ϊ�û����������£�</h3>
+				<div class="item-content" style="padding-bottom:10px;">
+					<div class="item-inner">
+						1.	���½ǵ���Ư����棨����һЩ��˾��棩
+					</div>
+					<div class="item-inner">
+						2.	����ȫ����棬�п��ܻ����������һ������Ϸ�� 
+					</div>
+					<div class="item-inner">
+						3.	���Ա�ȴ���Ա�����
+					</div>
+					<div class="item-inner">
+						4.	ҳ���Ϸ�ʱ��������ʵ�ʲ���
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<h3 class="item-title" id="explorer"><span class="icon-title"></span>�ֶ�����DNS������</h3>
+				<div class="item-content">
+					<div class="item-inner">
+						<b>XP���÷�����</b><br><br>��ʼ----�������----��������----��������----����----internet Э��(TCP/IP)----����----��������DNS������ 
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="http://jingyan.baidu.com/article/e75aca85b0ec35142fdac658.html">ͼʾ˵��</a>
+					</div>
+					<div class="item-inner">
+						<b>WIN7���÷�����</b><br><br>��ʼ----�������----����͹�������----�� �������Ӻ���Ĳ鿴״̬----����----internet Э��4(TCP/IPv4)
+						<br><br>
+						----����----��������DNS������
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="http://jingyan.baidu.com/article/e8cdb32b87deaa37052bad91.html">ͼʾ˵��</a>
+					</div>
+					<div class="item-inner">
+						<b>����DNS��������ѡ��һ������</b>
+					</div>
+					<div class="item-inner">
+						Google dns��8.8.8.8&nbsp;&nbsp;&nbsp;&nbsp;8.8.4.4
+					</div>
+					<div class="item-inner">
+						Open dns: 208.67.222.222&nbsp;&nbsp;&nbsp;&nbsp;208.67.220.220
+					</div>
+					<div class="item-inner">
+						 <b>�������������÷�����</b><br><br>��Firefox��ַ�������Զ������� about:config ������network.proxy.socks_remote_dns �޸�Ϊ true
+					</div>
+					<div class="item-inner">
+						 <b>���ع����Զ����ã�</b>
+					</div>
+					<div class="item-inner">
+						 1.dns_jumper&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://pan.baidu.com/share/link?shareid=4053&uk=2584038055">�������</a>
+					</div>
+					<div class="item-inner">
+						 2.����DNS�Ż�&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://pan.baidu.com/share/link?shareid=82490&uk=2584038055">�������</a>
+					</div>
+
+				</div>
+			</div>
+				<div class="item">
+				<h3 class="item-title" id="suoding"><span class="icon-title"></span>������Ϸ�����Ȼ�޷����</h3>
+				<div class="item-content">
+						<div class="item-inner">
+						�����԰����ⷴ�������ǣ�������Ա�ᾡ����ϵ������鴦���<a href="http://feedback.hao123.com/?catalog_id=3">�������</a>
+						</div>
+						<div class="item-inner">
+						<b>����Ͷ��</b>
+						</div>
+						<div class="item-inner">
+						1.����ϵ������Ӫ�̽���Ͷ�ߴ�����
+						</div>
+						<div class="item-inner">
+						2.<a href="http://www.chinatcc.gov.cn:8080/cms/shensus/">���Ų�Ͷ������</a> &nbsp;&nbsp;&nbsp;&nbsp;���Ų�Ͷ�ߵ绰��12300
+						</div> 
+
+					</div>
+
+				</div>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+
+		</div>
+	</div>
+  </div>
+<div class='ft'>
+   <div class="feedback">&copy;<script>document.write(new Date().getFullYear());</script> hao123&nbsp;&nbsp;<a href="http://feedback.hao123.com/?catalog_id=3">����</a></div>
+</div>
+<script src="/js/config.js"></script>
+<script src="/js/usertrack.js"></script>
+</body>
+<script> var pageId="hao123-redian-tongzhi";</script>
+<script>
+UserTrack.send({level:2, page:window.pageId, type:"access"});
+</script>
+<script src="http://www.hao123.com/js/monitor.js"></script>
+<script language=javascript>
+<!--
+document.f.word.focus()
+window.onload = function(){
+	haoSubSearch("web");
+	goSearch();
+}
+-->
+</script>
+</html>
