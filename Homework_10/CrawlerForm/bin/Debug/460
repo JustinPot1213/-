@@ -1,0 +1,518 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    <meta property="og:description" content="论文地址：https://arxiv.org/abs/2004.10934v1 github地址：https://github.com/AlexeyAB/darknet 摘要： 有很多特征可以提高卷积" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>【论文笔记】YOLOv4: Optimal Speed and Accuracy of Object Detection - 西西嘛呦 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/darkgreentrip/bundle-darkgreentrip.min.css?v=4KE41eS1YQSSwl64fGzzTUj6ijs-YQFat4AaN-g_jxc" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/xiximayou/custom.css?v=D4IoKl&#x2B;7PkjpfB3bILTAl2I92ns=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/darkgreentrip/bundle-darkgreentrip-mobile.min.css?v=0pGk3D9Ik_jI4q1TALBT2ybOjIePHS_80_0J4DDOQiY" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/xiximayou/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/xiximayou/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/xiximayou/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 465208;
+        var currentBlogApp = 'xiximayou';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'darkgreentrip';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    <div id="page_begin_html">
+        <script type="text/javascript">
+/* 鼠标特效 */
+var a_idx = 0;
+jQuery(document).ready(function($) {
+    $("body").click(function(e) {
+        var a = new Array("❤JAVA❤","❤C++❤","❤C❤","❤PYTHON❤","❤GO❤","❤LINUX❤","❤HTML❤","❤CSS❤","❤JS❤","❤PYTORCH❤","❤MXNET❤","❤TF❤");
+        var $i = $("<span></span>").text(a[a_idx]);
+        a_idx = (a_idx + 1) % a.length;
+        var x = e.pageX,
+        y = e.pageY;
+        $i.css({
+            "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "color": "rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"
+        });
+        $("body").append($i);
+        $i.animate({
+            "top": y - 180,
+            "opacity": 0
+        },
+        1500,
+        function() {
+            $i.remove();
+        });
+    });
+});
+</script>
+<link  type="text/css" rel="stylesheet" href="https://files.cnblogs.com/files/hafiz/feedback.css">
+    </div>
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/xiximayou/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/xiximayou/">西西嘛呦</a>
+</h1>
+<h2>
+<br/>
+从自己能做到的开始，一件件来，缓慢而坚定地前进，尽力而为
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/xiximayou/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E8%A5%BF%E8%A5%BF%E5%98%9B%E5%91%A6">
+联系</a></li>
+<li>
+
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+884&nbsp; </span>
+<span id="stats_article_count">文章 - 
+9&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+116</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class = "postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/xiximayou/p/12767929.html">【论文笔记】YOLOv4: Optimal Speed and Accuracy of Object Detection</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                
+<div id="cnblogs_post_body" class="blogpost-body ">
+    <p>论文地址：<a href="https://arxiv.org/abs/2004.10934v1">https://arxiv.org/abs/2004.10934v1</a></p>
+<p>github地址：<a href="https://github.com/AlexeyAB/darknet">https://github.com/AlexeyAB/darknet</a></p>
+<p>&nbsp;</p>
+<p><strong><span style="color: #0000ff; font-size: 14pt;">摘要：</span></strong></p>
+<p>有很多特征可以提高卷积神经网络（CNN）的准确性。需要在大型数据集上对这些特征的组合进行实际测试，并需要对结果进行理论证明来验证这些特征的有效性。 某些特征仅在某些模型上运行，并且仅在某些问题上运行，或者仅在小型数据集上运行； 而某些特征（例如批归一化和残差连接）适用于大多数模型，任务和数据集。 我们假设此类通用特征包括加权残差连接（WRC），跨阶段部分连接（CSP），交叉小批量标准化（CmBN），自对抗训练（SAT）和Mish激活。 我们使用以下新特征：WRC，CSP，CmBN，SAT，Mish激活，马赛克数据增强，CmBN，DropBlock正则化和CIoU丢失，并结合其中的一些特征来实现最先进的结果：在MS COCO数据集上，用Tesla V100Tesla V100以65 FPS的实时速度获得43.5％AP(65.7%AP50) 。</p>
+<p><span style="font-size: 14pt;"><strong><span style="color: #0000ff;">1.介绍：</span></strong></span></p>
+<p>大多数基于CNN的物体检测器仅适用于推荐系统。 例如，通过慢速精确模型执行的城市摄像机搜索免费停车位，而汽车碰撞警告与快速不精确模型有关。 提高实时物体检测器的精度不仅可以将它们用于提示生成推荐系统，还可以用于独立的过程管理和减少人工输入。 常规图形处理单元（GPU）上的实时对象检测器允许以可承受的价格对其进行操作。 最精确的现代神经网络不能实时运行，需要使用大量GPU用大min-batch-size进行训练，<span style="color: #0000ff;"><strong>我们通过创建在常规GPU上实时运行的CNN来解决此类问题，也就是训练只需要一个常规GPU</strong></span>。</p>
+<p>这项工作的主要目标是在生产系统中设计一个快速运行的目标探测器，并对并行计算进行优化，而不是设计一个低计算量的理论指示器(BFLOP)。我们希望设计的检测器可以很容易地训练和使用。例如，任何使用传统GPU进行训练和测试的人都可以获得实时、高质量、令人信服的对象检测结果，如图1所示的YOLOv4结果。</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto" src="https://img2020.cnblogs.com/blog/1503039/202004/1503039-20200424134107249-1991535845.png" alt=""></p>
+<p>我们的主要贡献如下：</p>
+<ul>
+<li><span class="tgt" data-group="0-0" data-section="0" data-sentence="0">我们开发了一个高效、强大的目标检测模型。<span class="tgt" data-group="0-1" data-section="0" data-sentence="1">它使每个人都可以使用1080 Ti或2080 Ti GPU来训练一个超级快速和准确的目标探测器。</span></span></li>
+<li>我们验证了在检测器训练的过程中最先进的&nbsp;Bag-of Freebies 和Bag-of-Specials methods of object detection的影响。</li>
+<li>我们修改了最先进的方法使得它们在单个GPU上训练更有效和适合，例如CBN、PAN、SAM等等。</li>
+</ul>
+<p><span style="font-size: 14pt;"><strong><span style="color: #0000ff;">2.相关工作：</span></strong></span></p>
+<p><span style="font-size: 14pt;"><strong><span style="color: #0000ff;">2.1 目标检测模型</span></strong></span></p>
+<p><span class="tgt" data-group="0-0" data-section="0" data-sentence="0">现代检测器通常由两个部分组成，一个是在ImageNet上预训练的主干，另一个是用来预测物体的类别和边界框的头部。<span class="tgt" data-group="0-1" data-section="0" data-sentence="1">对于那些运行在GPU平台上的检测器，它们的主干可以是VGG[68]、ResNet[26]、ResNeXt[86]或DenseNet[30]。<span class="tgt" data-group="0-2" data-section="0" data-sentence="2">对于那些运行在CPU平台上的检测器，它们的主干可以是SqueezeNet[31]、MobileNet[28,66,27,74]或ShuffleNet[97,53]。<span class="tgt" data-group="0-3" data-section="0" data-sentence="3">至于头部，通常分为两类:<span class="tgt" data-group="0-4" data-section="0" data-sentence="4">、一阶段目标检测器和二阶段目标检测器。<span class="tgt" data-group="0-5" data-section="0" data-sentence="5">最具代表性的二阶段目标探测器是R-CNN[19]系列，包括fast R-CNN [18]， faster R-CNN [64]， R-FCN [9]， Libra R-CNN[58]。<span class="tgt" data-group="0-6" data-section="0" data-sentence="6">也可以使两级对象检测器成为anchor-free对象检测器，如RepPoints[87]。一阶段<span class="tgt" data-group="0-7" data-section="0" data-sentence="7">目标探测器最具代表性的模型有YOLO[61, 62, 63]、SSD[50]、RetinaNet[45]。<span class="tgt" data-group="0-8" data-section="0" data-sentence="8">近年来，anchor-free一阶段目标探测器得到了广泛的应用。<span class="tgt" data-group="0-9" data-section="0" data-sentence="9">这类探测器有CenterNet[13]、CornerNet[37,38]、FCOS[78]等。<span class="tgt" data-group="0-10" data-section="0" data-sentence="10">近年来发展起来的目标探测器常常在主干和头部之间插入一些层，这些层通常用来收集不同阶段的特征图。<span class="tgt" data-group="0-11" data-section="0" data-sentence="11">我们可以称它为物体探测器的颈部。<span class="tgt" data-group="0-12" data-section="0" data-sentence="12">通常，一个颈部是由几个自底向上的路径和几个自顶向下的路径组成。<span class="tgt" data-group="0-13" data-section="0" data-sentence="13">具有该机制的网络包括特征金字塔网络(Feature Pyramid Network, FPN)[44]、路径汇聚网络(Path Aggregation Network, PAN)[49]、BiFPN[77]和NAS-FPN[17]。除了上述模型外，一些研究者还着重于直接构建一个新的主干(DetNet [43]， DetNAS[7])或一个新的整体模型(SpineNet [12]， HitDetector[20])用于对象检测。</span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p><span class="tgt" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1"><span class="tgt" data-group="0-2" data-section="0" data-sentence="2"><span class="tgt" data-group="0-3" data-section="0" data-sentence="3"><span class="tgt" data-group="0-4" data-section="0" data-sentence="4"><span class="tgt" data-group="0-5" data-section="0" data-sentence="5"><span class="tgt" data-group="0-6" data-section="0" data-sentence="6"><span class="tgt" data-group="0-7" data-section="0" data-sentence="7"><span class="tgt" data-group="0-8" data-section="0" data-sentence="8"><span class="tgt" data-group="0-9" data-section="0" data-sentence="9"><span class="tgt" data-group="0-10" data-section="0" data-sentence="10"><span class="tgt" data-group="0-11" data-section="0" data-sentence="11"><span class="tgt" data-group="0-12" data-section="0" data-sentence="12"><span class="tgt" data-group="0-13" data-section="0" data-sentence="13"><img style="display: block; margin-left: auto; margin-right: auto" src="https://img2020.cnblogs.com/blog/1503039/202004/1503039-20200424150105187-594130693.png" alt=""></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p><span class="tgt" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1"><span class="tgt" data-group="0-2" data-section="0" data-sentence="2"><span class="tgt" data-group="0-3" data-section="0" data-sentence="3"><span class="tgt" data-group="0-4" data-section="0" data-sentence="4"><span class="tgt" data-group="0-5" data-section="0" data-sentence="5"><span class="tgt" data-group="0-6" data-section="0" data-sentence="6"><span class="tgt" data-group="0-7" data-section="0" data-sentence="7"><span class="tgt" data-group="0-8" data-section="0" data-sentence="8"><span class="tgt" data-group="0-9" data-section="0" data-sentence="9"><span class="tgt" data-group="0-10" data-section="0" data-sentence="10"><span class="tgt" data-group="0-11" data-section="0" data-sentence="11"><span class="tgt" data-group="0-12" data-section="0" data-sentence="12"><span class="tgt" data-group="0-13" data-section="0" data-sentence="13">综上所述，一个普通的物体探测器是由几个部分组成的：</span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p><span class="tgt" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1"><span class="tgt" data-group="0-2" data-section="0" data-sentence="2"><span class="tgt" data-group="0-3" data-section="0" data-sentence="3"><span class="tgt" data-group="0-4" data-section="0" data-sentence="4"><span class="tgt" data-group="0-5" data-section="0" data-sentence="5"><span class="tgt" data-group="0-6" data-section="0" data-sentence="6"><span class="tgt" data-group="0-7" data-section="0" data-sentence="7"><span class="tgt" data-group="0-8" data-section="0" data-sentence="8"><span class="tgt" data-group="0-9" data-section="0" data-sentence="9"><span class="tgt" data-group="0-10" data-section="0" data-sentence="10"><span class="tgt" data-group="0-11" data-section="0" data-sentence="11"><span class="tgt" data-group="0-12" data-section="0" data-sentence="12"><span class="tgt" data-group="0-13" data-section="0" data-sentence="13"><img style="display: block; margin-left: auto; margin-right: auto" src="https://img2020.cnblogs.com/blog/1503039/202004/1503039-20200424140638813-1847735900.png" alt=""></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p><span style="font-size: 14pt;"><strong><span style="color: #0000ff;">2.2 Bag of freebies</span></strong></span></p>
+<p><span class="tgt" data-group="0-0" data-section="0" data-sentence="0">通常，传统的目标探测器是离线训练的。<span class="tgt" data-group="0-1" data-section="0" data-sentence="1">因此，研究人员总是希望利用这一优势，开发出更好的训练方法，使目标探测器在不增加推理成本的情况下获得更好的精度。<span class="tgt" data-group="0-2" data-section="0" data-sentence="2">我们称这些方法为只改变训练策略或只增加训练成本的免费赠品。<span class="tgt" data-group="0-3" data-section="0" data-sentence="3">对象检测方法中经常采用的、符合赠品包定义的是<span style="color: #0000ff;"><strong>数据扩充</strong></span>。<span class="tgt" data-group="0-4" data-section="0" data-sentence="4">数据扩充的目的是增加输入图像的可变性，使所设计的目标检测模型对不同环境下获得的图像具有更高的鲁棒性。<span class="tgt" data-group="0-5" data-section="0" data-sentence="5">例如，<span style="color: #0000ff;"><strong>光度畸变和几何畸变</strong></span>是两种常用的数据增强方法，它们对目标检测任务有明显的好处。<strong><span class="tgt" style="color: #0000ff;" data-group="0-6" data-section="0" data-sentence="6">在处理光度失真时，我们调整图像的亮度、对比度、色调、饱和度和噪声。<span class="tgt" data-group="0-7" data-section="0" data-sentence="7">对于几何畸变，我们添加了随机缩放、剪切、翻转和旋转。</span></span></strong></span></span></span></span></span></span></p>
+<p><span class="tgt" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1"><span class="tgt" data-group="0-2" data-section="0" data-sentence="2"><span class="tgt" data-group="0-3" data-section="0" data-sentence="3"><span class="tgt" data-group="0-4" data-section="0" data-sentence="4"><span class="tgt" data-group="0-5" data-section="0" data-sentence="5"><span class="tgt" data-group="0-6" data-section="0" data-sentence="6"><span class="tgt" data-group="0-7" data-section="0" data-sentence="7"><span class="tgt" data-group="0-0" data-section="0" data-sentence="0">上述数据增强方法均为像素级调整，调整区域内的所有原始像素信息均保留。<span class="tgt" data-group="0-1" data-section="0" data-sentence="1">此外，一些从事数据扩充的研究人员把重点放在模拟物体遮挡问题上。<span class="tgt" data-group="0-2" data-section="0" data-sentence="2">在图像分类和目标检测方面取得了良好的效果。<span class="tgt" data-group="0-3" data-section="0" data-sentence="3">例如，random wipe[100]和CutOut[11]可以随机选择图像中的矩形区域，并填充一个随机的或互补的0值。<span class="tgt" data-group="0-4" data-section="0" data-sentence="4">对于hide-and-seek[69]和grid mask[6]，它们随机或均匀地选择图像中的多个矩形区域，并将其全部替换为零。<span class="tgt" data-group="0-5" data-section="0" data-sentence="5">如果将类似的概念应用于feature map，则有DropOut[71]、DropConnect[80]和DropBlock[16]方法。<span class="tgt" data-group="0-6" data-section="0" data-sentence="6">此外，一些研究者提出了将多幅图像结合在一起进行数据扩充的方法。<span class="tgt" data-group="0-7" data-section="0" data-sentence="7">例如，MixUp[92]使用两幅图像以不同的系数比率进行相乘和叠加，然后利用这些叠加比率调整标签。<span class="tgt" data-group="0-8" data-section="0" data-sentence="8">CutMix[91]是将裁剪后的图像覆盖到其他图像的矩形区域，并根据混合区域的大小调整标签。<span class="tgt" data-group="0-9" data-section="0" data-sentence="9">除了上述方法外，style transfer GAN[15]也被用于数据扩充，这样的使用可以有效的减少CNN学习到的纹理偏差。</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p><span class="tgt" data-group="0-0" data-section="0" data-sentence="0">与上述各种方法不同，其他一些免费赠品方法致力于解决数据集中的语义分布可能存在偏差的问题。<span class="tgt" data-group="0-1" data-section="0" data-sentence="1">在处理语义分布偏差问题时，一个非常重要的问题是存在着不同类之间的数据不平衡问题，这一问题通常通过两阶段对象检测器中的hard example mining[72]或online hard example mining[67]来解决。<span class="tgt" data-group="0-2" data-section="0" data-sentence="2">但the example mining不适用于单级目标探测器，因为这种探测器属于稠密预测结构。<span class="tgt" data-group="0-3" data-section="0" data-sentence="3">因此，Lin等人提出了focal loss来处理各类之间存在的数据不平衡问题。<span class="tgt" data-group="0-4" data-section="0" data-sentence="4">另一个非常重要的问题是，很难用一个one-hot hard representation来表达不同类别之间关联程度的关系。<span class="tgt" data-group="0-5" data-section="0" data-sentence="5">这种表示法常用于执行标记。<span class="tgt" data-group="0-6" data-section="0" data-sentence="6">文献[73]提出的label smoothing是将硬标签转换为软标签进行训练，使模型更加稳健。<span class="tgt" data-group="0-7" data-section="0" data-sentence="7">为了获得更好的软标签，Islam等人在[33]中引入了knowledge distillation的概念来设计标签细化网络。</span></span></span></span></span></span></span></span></p>
+<p><span class="tgt" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1"><span class="tgt" data-group="0-2" data-section="0" data-sentence="2"><span class="tgt" data-group="0-3" data-section="0" data-sentence="3"><span class="tgt" data-group="0-4" data-section="0" data-sentence="4"><span class="tgt" data-group="0-5" data-section="0" data-sentence="5"><span class="tgt" data-group="0-6" data-section="0" data-sentence="6"><span class="tgt" data-group="0-7" data-section="0" data-sentence="7"><span class="tgt" data-group="0-0" data-section="0" data-sentence="0">最后一袋免费赠品是Bounding Box Regression的目标函数。<span class="tgt" data-group="0-1" data-section="0" data-sentence="1">传统的目标检测器通常使用均方误差(Mean Square Error, MSE)直接对BBox的中心点坐标和高度、宽度进行回归，即<span class="tgt" data-group="0-2" data-section="0" data-sentence="2">， {xcenter, ycenter, w, h}，或左上点和右下点，即<span class="tgt" data-group="0-3" data-section="0" data-sentence="3">， {xtop lef t, ytop lef t, xbottom right, ybottom right}。<span class="tgt" data-group="0-4" data-section="0" data-sentence="4">对于基于anchor的方法，是对相应的偏移量进行估计，{xcenter offset, ycenter offset, woffset, hoffset} and {xtop left offset, ytop left offset, xbottom right offset, ybottom right offset}。<span class="tgt" data-group="0-5" data-section="0" data-sentence="5">但是，直接估计BBox中每个点的坐标值，就是把这些点当作自变量，而实际上并不考虑对象本身的完整性。<span class="tgt" data-group="0-6" data-section="0" data-sentence="6">为了更好地处理这个问题，一些研究者最近提出了IoU损失[90]，将预测的BBox区域的覆盖范围和ground truth BBox区域考虑在内。<span class="tgt" data-group="0-7" data-section="0" data-sentence="7">IoU的损失计算过程通过执行带有ground truth的IoU，触发BBox的四个坐标点的计算，然后将生成的结果连接成一个完整的代码。<span class="tgt" data-group="0-8" data-section="0" data-sentence="8">由于IoU是尺度不变的表示，它可以解决传统方法在计算{x, y, w, h}的l1或l2损耗时，损耗会随着尺度的增大而增大的问题。<span class="tgt" data-group="0-9" data-section="0" data-sentence="9">最近，一些研究人员继续改善IoU损失。<span class="tgt" data-group="0-10" data-section="0" data-sentence="10">例如GIoU loss[65]，除了覆盖区域外，还包括了物体的形状和方向。<span class="tgt" data-group="0-11" data-section="0" data-sentence="11">他们提出寻找能够同时覆盖预测的BBox和ground truth BBox的最小面积BBox，用这个BBox作为分母来代替IoU损失中原来使用的分母。<span class="tgt" data-group="0-12" data-section="0" data-sentence="12">对于DIoU loss[99]，它额外考虑了物体中心的距离，而CIoU loss[99]，同时考虑了重叠区域、中心点之间的距离和长宽比。<span class="tgt" data-group="0-13" data-section="0" data-sentence="13">在BBox回归问题上，CIoU具有较好的收敛速度和精度。</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p><span style="font-size: 14pt;"><strong><span class="tgt" style="color: #0000ff;" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1"><span class="tgt" data-group="0-2" data-section="0" data-sentence="2"><span class="tgt" data-group="0-3" data-section="0" data-sentence="3"><span class="tgt" data-group="0-4" data-section="0" data-sentence="4"><span class="tgt" data-group="0-5" data-section="0" data-sentence="5"><span class="tgt" data-group="0-6" data-section="0" data-sentence="6"><span class="tgt" data-group="0-7" data-section="0" data-sentence="7"><span class="tgt" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1"><span class="tgt" data-group="0-2" data-section="0" data-sentence="2"><span class="tgt" data-group="0-3" data-section="0" data-sentence="3"><span class="tgt" data-group="0-4" data-section="0" data-sentence="4"><span class="tgt" data-group="0-5" data-section="0" data-sentence="5"><span class="tgt" data-group="0-6" data-section="0" data-sentence="6"><span class="tgt" data-group="0-7" data-section="0" data-sentence="7"><span class="tgt" data-group="0-8" data-section="0" data-sentence="8"><span class="tgt" data-group="0-9" data-section="0" data-sentence="9"><span class="tgt" data-group="0-10" data-section="0" data-sentence="10"><span class="tgt" data-group="0-11" data-section="0" data-sentence="11"><span class="tgt" data-group="0-12" data-section="0" data-sentence="12"><span class="tgt" data-group="0-13" data-section="0" data-sentence="13">2.3&nbsp;Bag of specials</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></strong></span></p>
+<p><span class="tgt" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1"><span class="tgt" data-group="0-2" data-section="0" data-sentence="2"><span class="tgt" data-group="0-3" data-section="0" data-sentence="3"><span class="tgt" data-group="0-4" data-section="0" data-sentence="4"><span class="tgt" data-group="0-5" data-section="0" data-sentence="5"><span class="tgt" data-group="0-6" data-section="0" data-sentence="6"><span class="tgt" data-group="0-7" data-section="0" data-sentence="7"><span class="tgt" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1"><span class="tgt" data-group="0-2" data-section="0" data-sentence="2"><span class="tgt" data-group="0-3" data-section="0" data-sentence="3"><span class="tgt" data-group="0-4" data-section="0" data-sentence="4"><span class="tgt" data-group="0-5" data-section="0" data-sentence="5"><span class="tgt" data-group="0-6" data-section="0" data-sentence="6"><span class="tgt" data-group="0-7" data-section="0" data-sentence="7"><span class="tgt" data-group="0-8" data-section="0" data-sentence="8"><span class="tgt" data-group="0-9" data-section="0" data-sentence="9"><span class="tgt" data-group="0-10" data-section="0" data-sentence="10"><span class="tgt" data-group="0-11" data-section="0" data-sentence="11"><span class="tgt" data-group="0-12" data-section="0" data-sentence="12"><span class="tgt" data-group="0-13" data-section="0" data-sentence="13"><span class="tgt" data-group="0-0" data-section="0" data-sentence="0">对于那些仅增加少量推理成本，却能显著提高目标检测精度的插件模块和后处理方法，我们称之为特价包。<span class="tgt" data-group="0-1" data-section="0" data-sentence="1">这些插件模块一般用于增强模型中的某些属性，如扩大接受域、引入注意机制、增强特征集成能力等，后处理是筛选模型预测结果的一种方法。</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p><span class="tgt" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1"><span class="tgt" data-group="0-2" data-section="0" data-sentence="2"><span class="tgt" data-group="0-3" data-section="0" data-sentence="3"><span class="tgt" data-group="0-4" data-section="0" data-sentence="4"><span class="tgt" data-group="0-5" data-section="0" data-sentence="5"><span class="tgt" data-group="0-6" data-section="0" data-sentence="6"><span class="tgt" data-group="0-7" data-section="0" data-sentence="7"><span class="tgt" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1"><span class="tgt" data-group="0-2" data-section="0" data-sentence="2"><span class="tgt" data-group="0-3" data-section="0" data-sentence="3"><span class="tgt" data-group="0-4" data-section="0" data-sentence="4"><span class="tgt" data-group="0-5" data-section="0" data-sentence="5"><span class="tgt" data-group="0-6" data-section="0" data-sentence="6"><span class="tgt" data-group="0-7" data-section="0" data-sentence="7"><span class="tgt" data-group="0-8" data-section="0" data-sentence="8"><span class="tgt" data-group="0-9" data-section="0" data-sentence="9"><span class="tgt" data-group="0-10" data-section="0" data-sentence="10"><span class="tgt" data-group="0-11" data-section="0" data-sentence="11"><span class="tgt" data-group="0-12" data-section="0" data-sentence="12"><span class="tgt" data-group="0-13" data-section="0" data-sentence="13"><span class="tgt" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1"><span class="tgt" data-group="0-0" data-section="0" data-sentence="0">可以用来增强感受野的常用模块有SPP[25]、ASPP[5]和RFB[47]。<span class="tgt" data-group="0-1" data-section="0" data-sentence="1">SPP模块起源于空间金字塔匹配(SPM) [39]， SPMs原始方法是将feature map分割成几个相等的d&times;d块，其中d可以是{1,2,3，&hellip;<span class="tgt" data-group="0-2" data-section="0" data-sentence="2">，}从而形成空间金字塔，然后提取bag-of-word特征。<span class="tgt" data-group="0-3" data-section="0" data-sentence="3">SPP将SPM集成到CNN中，使用max-pooling操作，而不是bag-of-word操作。<span class="tgt" data-group="0-4" data-section="0" data-sentence="4">由于He等人提出的SPP模块会输出一维特征向量，因此在全卷积网络(FCN)中应用是不可行的。<span class="tgt" data-group="0-5" data-section="0" data-sentence="5">因此，在YOLOv3[63]的设计中，Redmon和Farhadi将SPP模块改进为最大池化输出与核大小k&times;k级联，其中k = {1,5,9,13}， stride = 1。<span class="tgt" data-group="0-6" data-section="0" data-sentence="6">在本设计中，较大的k&times;k的max pooling有效地增加了骨干特征的接受域。<span class="tgt" data-group="0-7" data-section="0" data-sentence="7">在添加SPP模块的改进版本后，YOLOv3-608在MS COCO对象检测任务上在AP50提升了了2.7%，增加了0.5%的额外计算量。<span class="tgt" data-group="0-8" data-section="0" data-sentence="8">ASPP[5]模块与改进后的SPP模块在运算上的区别主要体现在原始的k&times;k核大小，stride为1的最大池化大小到几个3&times;3核大小，扩展比为k，扩展卷积运算的stride为1。<span class="tgt" data-group="0-9" data-section="0" data-sentence="9">RFB模块是利用k&times;k kernel的几个展开卷积，展开比等于k, stride等于1，得到比ASPP更全面的空间覆盖。<span class="tgt" data-group="0-10" data-section="0" data-sentence="10">RFB[47]只需额外花费7%的推理时间，就可以将MS COCO上SSD的AP50增加5.7%。（这里ASPP和SPP翻译不太好，需要了解的看论文原文）。</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p><span class="tgt" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1"><span class="tgt" data-group="0-2" data-section="0" data-sentence="2"><span class="tgt" data-group="0-3" data-section="0" data-sentence="3"><span class="tgt" data-group="0-4" data-section="0" data-sentence="4"><span class="tgt" data-group="0-5" data-section="0" data-sentence="5"><span class="tgt" data-group="0-6" data-section="0" data-sentence="6"><span class="tgt" data-group="0-7" data-section="0" data-sentence="7"><span class="tgt" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1"><span class="tgt" data-group="0-2" data-section="0" data-sentence="2"><span class="tgt" data-group="0-3" data-section="0" data-sentence="3"><span class="tgt" data-group="0-4" data-section="0" data-sentence="4"><span class="tgt" data-group="0-5" data-section="0" data-sentence="5"><span class="tgt" data-group="0-6" data-section="0" data-sentence="6"><span class="tgt" data-group="0-7" data-section="0" data-sentence="7"><span class="tgt" data-group="0-8" data-section="0" data-sentence="8"><span class="tgt" data-group="0-9" data-section="0" data-sentence="9"><span class="tgt" data-group="0-10" data-section="0" data-sentence="10"><span class="tgt" data-group="0-11" data-section="0" data-sentence="11"><span class="tgt" data-group="0-12" data-section="0" data-sentence="12"><span class="tgt" data-group="0-13" data-section="0" data-sentence="13"><span class="tgt" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1"><span class="tgt" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1"><span class="tgt" data-group="0-2" data-section="0" data-sentence="2"><span class="tgt" data-group="0-3" data-section="0" data-sentence="3"><span class="tgt" data-group="0-4" data-section="0" data-sentence="4"><span class="tgt" data-group="0-5" data-section="0" data-sentence="5"><span class="tgt" data-group="0-6" data-section="0" data-sentence="6"><span class="tgt" data-group="0-7" data-section="0" data-sentence="7"><span class="tgt" data-group="0-8" data-section="0" data-sentence="8"><span class="tgt" data-group="0-9" data-section="0" data-sentence="9"><span class="tgt" data-group="0-10" data-section="0" data-sentence="10"><span class="tgt" data-group="0-0" data-section="0" data-sentence="0">在目标检测中经常使用的注意模块主要分为两种:通道式注意和点态注意，这两种注意模型的代表分别是挤压-激励(squeeze -and-激励，SE)[29]和空间注意模块(Spatial attention module, SAM)[85]。<span class="tgt" data-group="0-1" data-section="0" data-sentence="1">尽管SE模块可以改善ResNet50 ImageNet图像分类任务中1%精度，代价只会增加2%的计算工作。但是在GPU通常会增加推理时间约10%,所以它更适合用于移动设备。<span class="tgt" data-group="0-2" data-section="0" data-sentence="2">但是对于SAM，它只需要额外支付0.1%的计算量，它可以提高ResNet50-SE在ImageNet图像分类任务上的0.5% top-1准确率。<span class="tgt" data-group="0-3" data-section="0" data-sentence="3">最重要的是，它完全不影响GPU上的推理速度。</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p><span class="tgt" data-group="0-0" data-section="0" data-sentence="0">在特征集成方面，早期的实践是使用跳跃连接[51]或hyper-column[22]将低级物理特征集成到高级语义特征。<span class="tgt" data-group="0-1" data-section="0" data-sentence="1">随着FPN等多尺度预测方法的流行，人们提出了许多融合不同特征金字塔的轻量级模型。<span class="tgt" data-group="0-2" data-section="0" data-sentence="2">这类模块包括SFAM[98]、ASFF[48]和BiFPN[77]。<span class="tgt" data-group="0-3" data-section="0" data-sentence="3">SFAM的主要思想是利用SE模块对多尺度的拼接特征图进行信道级配重权。<span class="tgt" data-group="0-4" data-section="0" data-sentence="4">对于ASFF，它使用softmax作为点向水平重加权，然后添加不同尺度的特征映射。<span class="tgt" data-group="0-5" data-section="0" data-sentence="5">在BiFPN中，提出了多输入加权剩余连接来执行按比例加权的水平重加权，然后加入不同比例的特征映射。</span></span></span></span></span></span>&nbsp;</p>
+<p><span class="tgt" data-group="0-0" data-section="0" data-sentence="0">在深度学习的研究中，一些人把重点放在寻找良好的激活功能上。<span class="tgt" data-group="0-1" data-section="0" data-sentence="1">一个好的激活函数可以使梯度更有效地传播，同时也不会造成过多的计算开销。<span class="tgt" data-group="0-2" data-section="0" data-sentence="2">2010年，Nair和Hinton[56]提出ReLU，从本质上解决了传统tanh和sigmoid激活函数中经常遇到的梯度消失问题。<span class="tgt" data-group="0-3" data-section="0" data-sentence="3">随后，LReLU[54]、PReLU[24]、ReLU6[28]、标度指数线性单元(SELU)[35]、Swish[59]、hard-Swish[27]、Mish[55]等也被用于解决梯度消失问题。<span class="tgt" data-group="0-4" data-section="0" data-sentence="4">LReLU和PReLU的主要目的是解决输出小于0时ReLU的梯度为零的问题。<span class="tgt" data-group="0-5" data-section="0" data-sentence="5">对于ReLU6和hard-Swish，它们是专门为量化网络设计的。<span class="tgt" data-group="0-6" data-section="0" data-sentence="6">为了实现神经网络的自归一化，提出了SELU激活函数。<span class="tgt" data-group="0-7" data-section="0" data-sentence="7">需要注意的一点是，Swish和Mish都是连续可微的激活函数。</span></span></span></span></span></span></span></span></p>
+<p><span class="tgt" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-0" data-section="0" data-sentence="0">基于深度挖掘的对象检测中常用的后处理方法是NMS，它可以过滤那些对同一对象预测较差的bbox，只保留响应较高的候选bbox。<span class="tgt" data-group="0-1" data-section="0" data-sentence="1">NMS试图改进的方法与优化目标函数的方法是一致的。<span class="tgt" data-group="0-2" data-section="0" data-sentence="2">NMS提出的原始方法没有考虑上下文信息，所以Girshick等人[19]在R-CNN中加入了分类置信度评分作为参考，按照置信度评分的顺序，从高到低依次进行贪婪NMS。<span class="tgt" data-group="0-3" data-section="0" data-sentence="3">对于soft NMS[1]，考虑了在IoU评分的贪心NMS中，对象的遮挡可能会导致信心评分下降的问题。<span class="tgt" data-group="0-4" data-section="0" data-sentence="4">DIoU NMS[99]开发人员的思路是在软NMS的基础上，将中心点距离信息添加到BBox筛选过程中。<span class="tgt" data-group="0-5" data-section="0" data-sentence="5">值得一提的是，由于以上的后处理方法都不直接引用捕获的图像特征，因此在后续的无锚方法开发中不再需要后处理。</span></span></span></span></span></span></span></p>
+<p><span style="font-size: 14pt;"><strong><span style="color: #0000ff;">3、方法论</span></strong></span></p>
+<p><span class="tgt" data-group="0-0" data-section="0" data-sentence="0">其基本目标是在生产系统中提高神经网络的运行速度和并行计算的优化速度，而不是低计算量理论指标(BFLOP)。<span class="tgt" data-group="0-1" data-section="0" data-sentence="1">我们提出了实时神经网络的两种选择:</span></span></p>
+<ul>
+<li><span class="tgt" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1">对于GPU，我们在卷积层中使用少量的组(1 - 8):CSPResNeXt50 / CSPDarknet53</span></span></li>
+<li><span class="tgt" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1">对于VPU，我们使用grouped-convolution，但是我们不使用(SE)块，具体来说，这包括以下模型:EfficientNet-lite / MixNet [76] / GhostNet [21] / MobileNetV3</span></span></li>
+</ul>
+<p><span style="font-size: 14pt;"><strong><span class="tgt" style="color: #0000ff;" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1">3.1 选择的技术</span></span></strong></span></p>
+<p><span class="tgt" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1"><span class="tgt" data-group="0-0" data-section="0" data-sentence="0">我们的目标是在输入网络分辨率、卷积层数、参数数(filter size2 * filters * channel / groups)和层输出数(filter)之间找到最优的平衡。<span class="tgt" data-group="0-1" data-section="0" data-sentence="1">例如，我们的大量研究表明，在ILSVRC2012 (ImageNet)数据集[10]上的对象分类方面，CSPResNext50要比CSPDarknet53好得多。<span class="tgt" data-group="0-2" data-section="0" data-sentence="2">然而，相反地，CSPDarknet53在检测MS COCO数据集[46]上的对象方面优于CSPResNext50。</span></span></span></span></span></p>
+<p><span class="tgt" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1"><span class="tgt" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1"><span class="tgt" data-group="0-2" data-section="0" data-sentence="2"><span class="tgt" data-group="0-3" data-section="0" data-sentence="3">下一个目标是选择另外的模块来增加感受野，并从不同主干级别中为检测器级别，例如FPN、PAN、ASFF、BiFPN等选择参数聚合的最佳方法。<br /></span></span></span></span></span></span></p>
+<p><span class="tgt" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1"><span class="tgt" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1"><span class="tgt" data-group="0-2" data-section="0" data-sentence="2"><span class="tgt" data-group="0-3" data-section="0" data-sentence="3"><span class="tgt" data-group="0-4" data-section="0" data-sentence="4">对分类最优的参考模型不一定对检测器最优。<span class="tgt" data-group="0-5" data-section="0" data-sentence="5">与分类不同，检测器需要以下特性：</span></span></span></span></span></span></span></span></p>
+<ul>
+<li><span class="tgt" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1"><span class="tgt" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1"><span class="tgt" data-group="0-2" data-section="0" data-sentence="2"><span class="tgt" data-group="0-3" data-section="0" data-sentence="3"><span class="tgt" data-group="0-4" data-section="0" data-sentence="4"><span class="tgt" data-group="0-5" data-section="0" data-sentence="5">更大的网络输入，用于检测小目标</span></span></span></span></span></span></span></span></li>
+<li><span class="tgt" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1"><span class="tgt" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1"><span class="tgt" data-group="0-2" data-section="0" data-sentence="2"><span class="tgt" data-group="0-3" data-section="0" data-sentence="3"><span class="tgt" data-group="0-4" data-section="0" data-sentence="4"><span class="tgt" data-group="0-5" data-section="0" data-sentence="5">更多的层-以获得更大的感受野来覆盖增大的输入图像</span></span></span></span></span></span></span></span></li>
+<li><span class="tgt" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1"><span class="tgt" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1"><span class="tgt" data-group="0-2" data-section="0" data-sentence="2"><span class="tgt" data-group="0-3" data-section="0" data-sentence="3"><span class="tgt" data-group="0-4" data-section="0" data-sentence="4"><span class="tgt" data-group="0-5" data-section="0" data-sentence="5">更多的参数-为了增强从单张图像中检测出不同大小的多个对象的能力</span></span></span></span></span></span></span></span></li>
+
+
+</ul>
+<p><span class="tgt" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1"><span class="tgt" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1"><span class="tgt" data-group="0-2" data-section="0" data-sentence="2"><span class="tgt" data-group="0-3" data-section="0" data-sentence="3"><span class="tgt" data-group="0-4" data-section="0" data-sentence="4"><span class="tgt" data-group="0-5" data-section="0" data-sentence="5"><span class="tgt" data-group="0-0" data-section="0" data-sentence="0">假设我们可以选择一个接受域较大的模型(包含较多的3&times;3 convolutional layers)和较多的parameter作为主干。<span class="tgt" data-group="0-1" data-section="0" data-sentence="1">表1显示了CSPResNeXt50、CSPDarknet53和Effi- cientNet B3的信息。<span class="tgt" data-group="0-2" data-section="0" data-sentence="2">CSPResNext50只包含16个3&times;3卷积层，一个425 &times;425的接受域和20.6 M的参数，而CSPDarknet53包含29个3&times;3卷积层，一个725&times;725的接受域和27.6 M的参数。<span class="tgt" data-group="0-3" data-section="0" data-sentence="3">这一理论证明，以及我们的大量实验，表明<strong><span style="color: #0000ff;">CSPDarknet53神经网络在两者中是作为探测器主干的最佳模型。</span></strong></span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p><span class="tgt" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1"><span class="tgt" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1"><span class="tgt" data-group="0-2" data-section="0" data-sentence="2"><span class="tgt" data-group="0-3" data-section="0" data-sentence="3"><span class="tgt" data-group="0-4" data-section="0" data-sentence="4"><span class="tgt" data-group="0-5" data-section="0" data-sentence="5"><span class="tgt" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1"><span class="tgt" data-group="0-2" data-section="0" data-sentence="2"><span class="tgt" data-group="0-3" data-section="0" data-sentence="3"><img style="display: block; margin-left: auto; margin-right: auto" src="https://img2020.cnblogs.com/blog/1503039/202004/1503039-20200424145642791-1304506894.png" alt=""></span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p>不同大小的感受野对检测效果的影响如下所示：</p>
+<ul>
+<li>达到对象的大小 -允许看到整个对象</li>
+<li>达到网络的大小-允许观测到对象的上下文信息</li>
+<li>超越网络大小-增加图像点和最终激活之间的连接数量</li>
+
+
+</ul>
+<p><span class="tgt" data-group="0-0" data-section="0" data-sentence="0">我们在CSPDarknet53上添加了SPP块，因为它显著地增加了接受域，分离出最重要的上下文特征，并且几乎不会导致网络运行速度的降低。<span class="tgt" data-group="0-1" data-section="0" data-sentence="1">我们使用PANet作为从不同的骨组织水平对不同的检测器水平进行参数聚合的方法，而不是YOLOv3中使用的fpn。</span></span></p>
+<p><span class="tgt" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1"><span class="tgt" data-group="0-2" data-section="0" data-sentence="2">最后，我们选择CSPDarknet53主干、SPP添加模块、PANet路径聚集颈和YOLOv3(基于锚的)头作为YOLOv4的架构。</span></span></span></p>
+<p><span class="tgt" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1"><span class="tgt" data-group="0-2" data-section="0" data-sentence="2"><span class="tgt" data-group="0-3" data-section="0" data-sentence="3">在未来，我们计划大幅扩展探测器的免费赠品包(BoF)的内容，理论上可以解决一些问题，提高探测精度，并以实验的方式依次检查每种特性的影响。</span></span></span></span></p>
+<p><span class="tgt" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1"><span class="tgt" data-group="0-2" data-section="0" data-sentence="2"><span class="tgt" data-group="0-3" data-section="0" data-sentence="3"><span class="tgt" data-group="0-4" data-section="0" data-sentence="4">我们不使用跨gpu批处理标准化(CGBNor SyncBN)或昂贵的专用设备。<span class="tgt" data-group="0-5" data-section="0" data-sentence="5">这使得任何人都可以在传统的图形处理器(如GTX 1080Ti或RTX2080Ti)上重现我们的最新成果。</span></span></span></span></span></span></p>
+<p><span class="tgt" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1"><span class="tgt" data-group="0-2" data-section="0" data-sentence="2"><span class="tgt" data-group="0-3" data-section="0" data-sentence="3"><span class="tgt" data-group="0-4" data-section="0" data-sentence="4"><span class="tgt" data-group="0-5" data-section="0" data-sentence="5">总结：3.1节的核心</span></span></span></span></span></span></p>
+<ul>
+<li><span class="tgt" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1"><span class="tgt" data-group="0-2" data-section="0" data-sentence="2"><span class="tgt" data-group="0-3" data-section="0" data-sentence="3"><span class="tgt" data-group="0-4" data-section="0" data-sentence="4"><span class="tgt" data-group="0-5" data-section="0" data-sentence="5">选择CSPDarknet53主干</span></span></span></span></span></span></li>
+<li><span class="tgt" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1"><span class="tgt" data-group="0-2" data-section="0" data-sentence="2"><span class="tgt" data-group="0-3" data-section="0" data-sentence="3"><span class="tgt" data-group="0-4" data-section="0" data-sentence="4"><span class="tgt" data-group="0-5" data-section="0" data-sentence="5">使用SPP模块来增大感受野</span></span></span></span></span></span></li>
+<li><span class="tgt" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1"><span class="tgt" data-group="0-2" data-section="0" data-sentence="2"><span class="tgt" data-group="0-3" data-section="0" data-sentence="3"><span class="tgt" data-group="0-4" data-section="0" data-sentence="4"><span class="tgt" data-group="0-5" data-section="0" data-sentence="5">使用PANet中的路径聚合模块</span></span></span></span></span></span></li>
+<li><span class="tgt" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1"><span class="tgt" data-group="0-2" data-section="0" data-sentence="2"><span class="tgt" data-group="0-3" data-section="0" data-sentence="3"><span class="tgt" data-group="0-4" data-section="0" data-sentence="4"><span class="tgt" data-group="0-5" data-section="0" data-sentence="5">使用YOLOV3中的头部</span></span></span></span></span></span></li>
+
+
+</ul>
+<p><span style="font-size: 14pt;"><strong><span class="tgt" style="color: #0000ff;" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1"><span class="tgt" data-group="0-2" data-section="0" data-sentence="2"><span class="tgt" data-group="0-3" data-section="0" data-sentence="3"><span class="tgt" data-group="0-4" data-section="0" data-sentence="4"><span class="tgt" data-group="0-5" data-section="0" data-sentence="5">3.2 选择BoF和BoS</span></span></span></span></span></span></strong></span></p>
+<p><span class="tgt" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1"><span class="tgt" data-group="0-2" data-section="0" data-sentence="2"><span class="tgt" data-group="0-3" data-section="0" data-sentence="3"><span class="tgt" data-group="0-4" data-section="0" data-sentence="4"><span class="tgt" data-group="0-5" data-section="0" data-sentence="5">卷积神经网络可使用的技术：</span></span></span></span></span></span></p>
+<p><span class="tgt" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1"><span class="tgt" data-group="0-2" data-section="0" data-sentence="2"><span class="tgt" data-group="0-3" data-section="0" data-sentence="3"><span class="tgt" data-group="0-4" data-section="0" data-sentence="4"><span class="tgt" data-group="0-5" data-section="0" data-sentence="5"><img style="display: block; margin-left: auto; margin-right: auto" src="https://img2020.cnblogs.com/blog/1503039/202004/1503039-20200424151022469-1838856634.png" alt=""></span></span></span></span></span></span></p>
+<p><span class="tgt" data-group="0-0" data-section="0" data-sentence="0">对于训练激活函数，由于PReLU和SELU更难训练，而ReLU6是专门为量化网络设计的，因此我们将上述激活函数从候选列表中删除。<span class="tgt" data-group="0-1" data-section="0" data-sentence="1">在reqularization方法上，发表DropBlock的人详细的将他们的方法与其他方法进行了比较，他们的regularization方法取得了很大的成果。因此，我们毫不犹豫的选择了DropBlock作为我们的regularization方法。<span class="tgt" data-group="0-2" data-section="0" data-sentence="2">在归一化方法的选择上，由于我们关注的是只使用一个GPU的训练策略，所以没有考虑syncBN。</span></span></span>&nbsp;</p>
+<p>总结：3.2节核心</p>
+<ul>
+<li>不考虑PReLU、SELU、RELU6激活函数</li>
+<li>使用DropBlock正则化方法</li>
+<li>不适用syncBN</li>
+
+
+</ul>
+<p><span style="font-size: 14pt;"><strong><span style="color: #0000ff;">3.3 另外的改善</span></strong></span></p>
+<p>为了让设计的检测器更适合在单个GPU上进行训练，进行了如下改善：</p>
+<ul>
+<li>提出了新的数据增强方法：Mosaic, and Self-Adversarial Training (SAT)</li>
+<li>使用遗传算法来选择超参数</li>
+<li>修改了一些现有的方法，使我们的设计适合于有效的训练和检测-修改的SAM，修改的PAN，和交叉小批量标准化(CmBN)</li>
+
+
+</ul>
+<p>Mosaic：混合四张训练图像，所以四个不同的上下文信息被混合，而CutMix只混合了2种。<span class="tgt" data-group="0-0" data-section="0" data-sentence="0">这允许检测正常上下文之外的对象。<span class="tgt" data-group="0-1" data-section="0" data-sentence="1">此外，BN在每一层从4个不同的图像计算激活统计量。<span class="tgt" data-group="0-2" data-section="0" data-sentence="2">这大大减少了对large mini-batch-size需求。</span></span></span></p>
+<p><span class="tgt" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1"><span class="tgt" data-group="0-2" data-section="0" data-sentence="2"><img style="display: block; margin-left: auto; margin-right: auto" src="https://img2020.cnblogs.com/blog/1503039/202004/1503039-20200424152016794-1185275545.png" alt=""></span></span></span></p>
+<p><span class="tgt" data-group="0-0" data-section="0" data-sentence="0">自对抗训练(SAT)也代表了一种新的数据扩充技术，它分前后两个阶段进行操作。<span class="tgt" data-group="0-1" data-section="0" data-sentence="1">在第一阶段，神经网络改变原始图像而不是网络权值。<span class="tgt" data-group="0-2" data-section="0" data-sentence="2">通过这种方式，神经网络对自己执行一种对抗性攻击，改变原始图像，制造图像上没有期望对象的假象。<span class="tgt" data-group="0-3" data-section="0" data-sentence="3">第二阶段训练神经网络对修改后的图像进行正常的目标检测。</span></span></span></span>&nbsp;</p>
+<p><span class="tgt" data-group="0-0" data-section="0" data-sentence="0">CmBN表示CBN的修改版本，如图4所示，定义为跨微批量标准化(CmBN)。<span class="tgt" data-group="0-1" data-section="0" data-sentence="1">这仅收集单个批中的小批之间的统计信息。</span></span></p>
+<p><span class="tgt" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1"><img style="display: block; margin-left: auto; margin-right: auto" src="https://img2020.cnblogs.com/blog/1503039/202004/1503039-20200424152206716-1029817278.png" alt=""></span></span></p>
+<p>我们将SAM从空间上的注意修改为点注意，并将PAN的快捷连接改为拼接，分别如图5和图6所示。</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto" src="https://img2020.cnblogs.com/blog/1503039/202004/1503039-20200424152258371-1720726704.png" alt=""></p>
+<p><span style="font-size: 14pt;"><strong><span style="color: #0000ff;">3.4 YOLOV4</span></strong></span></p>
+<p>直接直接放英文好理解：</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto" src="https://img2020.cnblogs.com/blog/1503039/202004/1503039-20200424152336787-1807171975.png" alt=""></p>
+<p><img style="display: block; margin-left: auto; margin-right: auto" src="https://img2020.cnblogs.com/blog/1503039/202004/1503039-20200424152419918-509629855.png" alt=""></p>
+<p><span style="font-size: 14pt;"><strong><span style="color: #0000ff;">4. 实验</span></strong></span></p>
+<p>我们在ImageNet (ILSVRC 2012 val)数据集上测试了不同的训练改进技术对分类器精度的影响，然后在MS COCO (test-dev 2017)数据集上测试了检测器的精度。</p>
+<p><span style="font-size: 14pt;"><strong><span style="color: #0000ff;">4.1 实验设置</span></strong></span></p>
+<p>还是英文比较方便：</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto" src="https://img2020.cnblogs.com/blog/1503039/202004/1503039-20200424152552105-1917033095.png" alt=""></p>
+<p><img style="display: block; margin-left: auto; margin-right: auto" src="https://img2020.cnblogs.com/blog/1503039/202004/1503039-20200424152630488-1953740229.png" alt=""></p>
+<p><span style="font-size: 14pt;"><strong><span style="color: #0000ff;">4.1 不同特征对分类器训练的影响</span></strong></span></p>
+<p><img style="display: block; margin-left: auto; margin-right: auto" src="https://img2020.cnblogs.com/blog/1503039/202004/1503039-20200424152722716-44187029.png" alt=""></p>
+<p><img style="display: block; margin-left: auto; margin-right: auto" src="https://img2020.cnblogs.com/blog/1503039/202004/1503039-20200424152758489-1529617510.png" alt=""></p>
+<p>使用CutMix+Mosaic+Label Smoothing+Mish的效果最好。</p>
+<p><span style="font-size: 14pt;"><strong><span style="color: #0000ff;">4.3 不同特征对检测器训练的影响</span></strong></span></p>
+<p>首先是表格中的缩写的含义：</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto" src="https://img2020.cnblogs.com/blog/1503039/202004/1503039-20200424153517796-1897594050.png" alt=""></p>
+<p>&nbsp;</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto" src="https://img2020.cnblogs.com/blog/1503039/202004/1503039-20200424153555015-743858050.png" alt=""></p>
+<p>使用S+M+IT+GA+OA+GIOU效果最好。</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto" src="https://img2020.cnblogs.com/blog/1503039/202004/1503039-20200424153723292-1396452158.png" alt=""></p>
+<p>使用CSPResNeXt50-PANet-SPP-SAM效果最好。</p>
+<p><span style="font-size: 14pt;"><strong><span style="color: #0000ff;">4.4 不同主干和预训练权重对检测器训练的影响</span></strong></span></p>
+<p>在分类上表现好的模型在检测上表现不总是最好的。</p>
+<p><span class="tgt" data-group="0-0" data-section="0" data-sentence="0">首先，虽然不同特征训练的CSPResNeXt- 50模型的分类精度要高于CSPDarknet53模型，但CSPDarknet53模型在目标检测方面具有更高的精度。</span></p>
+<p><span class="tgt" data-group="0-0" data-section="0" data-sentence="0"><span class="tgt" data-group="0-1" data-section="0" data-sentence="1">其次，在CSPResNeXt50分类器训练中使用BoF和Mish可以提高分类精度，但是在检测器训练中进一步使用这些预训练权重会降低检测器的精度。<span class="tgt" data-group="0-2" data-section="0" data-sentence="2">然而，在CSPDarknet53分类器训练中使用BoF和Mish可以提高分类器和使用该分类器预训练权重的检测器的准确性。<span class="tgt" data-group="0-3" data-section="0" data-sentence="3">最终的结果是CSPDarknet53基干比CSPResNeXt50更适合于探测器。<span class="tgt" data-group="0-4" data-section="0" data-sentence="4">我们观察到，由于各种改进，CSPDarknet53模型显示出了更大的提高探测器精度的能力。</span></span></span></span></span></p>
+<p><span style="font-size: 14pt;"><strong><span style="color: #0000ff;"><img style="display: block; margin-left: auto; margin-right: auto" src="https://img2020.cnblogs.com/blog/1503039/202004/1503039-20200424153957906-1939315374.png" alt=""></span></strong></span></p>
+<p><span style="font-size: 14pt;"><strong><span style="color: #0000ff;">4.5 不同Mini-batch size对检测器训练的影响</span></strong></span></p>
+<p><span class="tgt" data-group="0-0" data-section="0" data-sentence="0">最后，我们对不同小批量模型训练得到的结果进行了分析，结果如表7所示。<span class="tgt" data-group="0-1" data-section="0" data-sentence="1">从表7的结果可以看出，加入BoF和BoS训练策略后，小批量的尺寸对检测器的性能几乎没有影响。<span class="tgt" data-group="0-2" data-section="0" data-sentence="2">这一结果表明，在引入BoF和BoS之后，不再需要使用昂贵的gpu进行培训。<span class="tgt" data-group="0-3" data-section="0" data-sentence="3">换句话说，任何人都只能使用传统的GPU来训练一个优秀的检测器。</span></span></span></span>&nbsp;</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto" src="https://img2020.cnblogs.com/blog/1503039/202004/1503039-20200424154248285-1045520806.png" alt=""></p>
+<p>最后是与最先进的检测器进行对比：</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto" src="https://img2020.cnblogs.com/blog/1503039/202004/1503039-20200424154356030-1527425136.png" alt=""></p>
+<p><img style="display: block; margin-left: auto; margin-right: auto" src="https://img2020.cnblogs.com/blog/1503039/202004/1503039-20200424154448283-1232859487.png" alt=""></p>
+<p><img style="display: block; margin-left: auto; margin-right: auto" src="https://img2020.cnblogs.com/blog/1503039/202004/1503039-20200424154537077-527613696.png" alt=""></p>
+<p><img style="display: block; margin-left: auto; margin-right: auto" src="https://img2020.cnblogs.com/blog/1503039/202004/1503039-20200424154600198-1869403941.png" alt=""></p>
+<p>&nbsp;</p>
+<p>简单的翻译了下，很多内容也不是很理解，如有错误，欢迎指出。</p>
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2020-04-24 15:50</span>&nbsp;
+<a href="https://www.cnblogs.com/xiximayou/">西西嘛呦</a>&nbsp;
+阅读(<span id="post_view_count">...</span>)&nbsp;
+评论(<span id="post_comment_count">...</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12767929" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(12767929);return false;">收藏</a></div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+<script src="https://common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 465208, cb_blogApp = 'xiximayou', cb_blogUserGuid = '6d698895-197f-4e15-9014-08d627f4443f';
+    var cb_entryId = 12767929, cb_entryCreatedDate = '2020-04-24 15:50', cb_postType = 1; 
+    loadViewCount(cb_entryId);
+</script><a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<script>
+    var commentManager = new blogCommentManager();
+    commentManager.renderComments(0);
+</script>
+
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <script>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+    </script>
+    <script>
+        googletag.cmd.push(function () {
+            googletag.defineSlot("/1090369/C1", [300, 250], "div-gpt-ad-1546353474406-0").addService(googletag.pubads());
+            googletag.defineSlot("/1090369/C2", [468, 60], "div-gpt-ad-1539008685004-0").addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.enableServices();
+        });
+    </script>
+    <div id="cnblogs_c1" class="c_ad_block">
+        <div id="div-gpt-ad-1546353474406-0" style="height:250px; width:300px;"></div>
+    </div>
+    <div id="under_post_news"></div>
+    <div id="cnblogs_c2" class="c_ad_block">
+        <div id="div-gpt-ad-1539008685004-0" style="height:60px; width:468px;">
+            <script>
+                if (new Date() >= new Date(2018, 9, 13)) {
+                    googletag.cmd.push(function () { googletag.display("div-gpt-ad-1539008685004-0"); });
+                }
+            </script>
+        </div>
+    </div>
+    <div id="under_post_kb"></div>
+    <div id="HistoryToday" class="c_ad_block"></div>
+    <script type="text/javascript">
+        fixPostBody();
+        deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverAdT2();
+        deliverAdC1();
+        deliverAdC2();
+        loadNewsAndKb();
+        loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 西西嘛呦
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    <div id="page_end_html">
+        <script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+<script>
+    L2Dwidget.init({
+        "model": {
+            jsonPath: "https://unpkg.com/live2d-widget-model-hijiki/assets/hijiki.model.json",
+            "scale": 1
+        },
+        "display": {
+            "position": "right",
+            "width": 100,
+            "height": 200,
+            "hOffset": -17,
+            "vOffset": -10
+        },
+        "mobile": {
+            "show": true,
+            "scale": 0.5
+        },
+        "react": {
+            "opacityDefault": 0.7,
+            "opacityOnHover": 0.3
+        }
+    });
+</script>
+
+<script type="text/javascript">
+   window.onload = function () {
+                var minSize = 10; //最小字体
+                var maxSize = 20;//最大字体
+                var newOne = 600; //生成雪花间隔
+                var flakColor = "#f5f5f5fa"; //雪花颜色
+                var flak = $("<div></div>").css({position:"absolute","top":"0px"}).html("✽");//定义一个雪花
+                var dhight = $(window).height(); //定义视图高度
+                var dw =$(window).width()-80; //定义视图宽度
+                setInterval(function(){
+                var sizeflak = minSize+Math.random()*maxSize; //产生大小不等的雪花
+                var startLeft = Math.random()*dw; //雪花生成是随机的left值
+                var startOpacity = 0.7+Math.random()*0.3; //随机透明度
+                var endTop= dhight-100; //雪花停止top的位置
+                var endLeft= Math.random()*dw; //雪花停止的left位置
+                var durationfull = 5000+Math.random()*3000; //雪花飘落速度不同
+                flak.clone().appendTo($("body")).css({
+                "left":startLeft ,
+                "opacity":startOpacity,
+                "font-size":sizeflak,
+                "color":flakColor
+                }).animate({
+                "top":endTop,
+                "left":endLeft,
+                "apacity":0.1
+                },durationfull,function(){
+                $(this).remove()
+                });
+                },newOne);
+            }
+ </script>
+<script language="javascript" type="text/javascript">
+//生成目录索引列表
+function GenerateContentList()
+{
+    var jquery_h3_list = $('#cnblogs_post_body h3');//如果你的章节标题不是h3,只需要将这里的h3换掉即可
+    if(jquery_h3_list.length>0)
+    {
+        var content = '<a name="_labelTop"></a>';
+        content    += '<div id="navCategory">';
+        content    += '<p style="font-size:18px"><b>阅读目录</b></p>';
+        content    += '<ul>';
+        for(var i =0;i<jquery_h3_list.length;i++)
+        {
+            var go_to_top = '<div style="text-align: right"><a href="#_labelTop">回到顶部</a><a name="_label' + i + '"></a></div>';
+            $(jquery_h3_list[i]).before(go_to_top);
+            var li_content = '<li><a href="#_label' + i + '">' + $(jquery_h3_list[i]).text() + '</a></li>';
+            content += li_content;
+        }
+        content    += '</ul>';
+        content    += '</div>';
+        if($('#cnblogs_post_body').length != 0 )
+        {
+            $($('#cnblogs_post_body')[0]).prepend(content);
+        }
+    }    
+}
+GenerateContentList();
+</script>
+
+<script type="text/javascript">
+$(function(){
+    $('#blogTitle h1').addClass('bounceInLeft animated');
+    $('#blogTitle h2').addClass('bounceInRight animated');
+    // 删除反对按钮
+    //$('.buryit').remove();
+    initCommentData();
+});
+function initCommentData() {
+    $('.feedbackItem').each(function() {
+        var text = $(this).find('.feedbackListSubtitle .layer').text();
+        // 将楼层信息放到data里面
+        // $(this).find('.blog_comment_body').attr('data-louceng', text.replace(/^#/g, ''));
+        if($(this).find('.feedbackListSubtitle .louzhu').length>0) $(this).addClass('myself');
+        var avatar = $(this).find('> .feedbackCon > span').html() || 'http://pic.cnitblog.com/face/sample_face.gif';
+        $(this).find('> .feedbackCon > .blog_comment_body').append('<img class="user-avatar" src="'+avatar+'"/>')
+    });
+}
+
+$(document).ajaxComplete(function(event, xhr, settings) {
+  // 监听获取评论ajax事件
+  if(settings.url.indexOf('/mvc/blog/GetComments.aspx') >= 0) {
+    initCommentData();
+  }
+});
+</script>
+<span id="back-to-top"><a href="#top"><img id="mypic" src="https://images.cnblogs.com/cnblogs_com/xiximayou/1643158/t_200207035556top.png" /></a></span>
+    </div>
+</body>
+</html>

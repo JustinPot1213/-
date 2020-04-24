@@ -1,0 +1,864 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>健伟博客 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/darkgreentrip/bundle-darkgreentrip.min.css?v=4KE41eS1YQSSwl64fGzzTUj6ijs-YQFat4AaN-g_jxc" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/xiaojianwei/custom.css?v=BfYYQ3IY30DtBY6bwFSiYfR&#x2B;IVM=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/darkgreentrip/bundle-darkgreentrip-mobile.min.css?v=0pGk3D9Ik_jI4q1TALBT2ybOjIePHS_80_0J4DDOQiY" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/xiaojianwei/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/xiaojianwei/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/xiaojianwei/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 479684;
+        var currentBlogApp = 'xiaojianwei';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'darkgreentrip';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    <div id="page_begin_html">
+        <audio src=""  loop></audio>
+<div class="msc">
+<div class="msc1"><marquee direction="right" scrollamount="2" onmouseover="stop()" onmouseout="start()"></marquee></div>
+<div class="msc2"></div>
+</div>
+    </div>
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/xiaojianwei/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/xiaojianwei/">健伟博客</a>
+</h1>
+<h2>
+每一行代码。就是每一条生命，生命诚可贵，代码价更高
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/xiaojianwei/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E5%81%A5%E4%BC%9F%E5%8D%9A%E5%AE%A2">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/xiaojianwei/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			
+			<span id="stats_post_count">随笔 - 
+54&nbsp; </span>
+<span id="stats_article_count">文章 - 
+6&nbsp; </span>
+<span id="stats-comment_count">评论 - 
+6</span>
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<!--done-->
+
+
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xiaojianwei/archive/2020/04/24.html">2020年4月24日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/xiaojianwei/p/12768464.html">
+[置顶]    一个企业网站项目制作总结
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：一个企业网站项目制作总结 使用技术： Html+css+jquery+swiper+swiper.animated.css+animated.css 负责内容： 1、与甲方负责人确定wap端页面 2、Wap端静态页面制作与兼容性处理 3、Wap端页面交互效果添加 4、Pc端页面样式迭代与兼容性处理             <a href="https://www.cnblogs.com/xiaojianwei/p/12768464.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-24 16:44 健伟博客 阅读 (2) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12768464" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xiaojianwei/archive/2020/04/15.html">2020年4月15日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/xiaojianwei/p/12704536.html">
+[置顶]    在swiper-slide中水平垂直居中元素flex实现
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：在swiper-slide中水平垂直居中元素 flex实现            <a href="https://www.cnblogs.com/xiaojianwei/p/12704536.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-15 12:59 健伟博客 阅读 (15) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12704536" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xiaojianwei/archive/2020/04/11.html">2020年4月11日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/xiaojianwei/p/12678430.html">
+[置顶]    wap端一屏背景页面浏览器/手机兼容性问题
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：wap端一屏背景页面浏览器/手机兼容性问题            <a href="https://www.cnblogs.com/xiaojianwei/p/12678430.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-11 11:32 健伟博客 阅读 (9) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12678430" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xiaojianwei/archive/2020/03/05.html">2020年3月5日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/xiaojianwei/p/12421699.html">
+[置顶]    swiper实现内容自适应匀速滚动
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：swiper实现内容自适应匀速滚动            <a href="https://www.cnblogs.com/xiaojianwei/p/12421699.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-05 18:08 健伟博客 阅读 (130) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12421699" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xiaojianwei/archive/2020/02/20.html">2020年2月20日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/xiaojianwei/p/12336124.html">
+[置顶]    VSCode配置之open-with-Live-Server 无法打开浏览器【解决方法】
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：如果你的vscode编辑器打开浏览器时默认打开的是iE,想要把它改为chrome，怎么办呢？看里面，有你想要的内容。            <a href="https://www.cnblogs.com/xiaojianwei/p/12336124.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-02-20 16:05 健伟博客 阅读 (1467) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12336124" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xiaojianwei/archive/2020/01/18.html">2020年1月18日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/xiaojianwei/p/12209147.html">
+[置顶]    arguments.callee实现深拷贝
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：最近正在看一个腾讯课堂里面的学习视频中的js知识点，然后有一个深拷贝的题，于是就做了一下，使用arguments.callee实现深拷贝。            <a href="https://www.cnblogs.com/xiaojianwei/p/12209147.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-01-18 15:24 健伟博客 阅读 (28) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12209147" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xiaojianwei/archive/2019/11/25.html">2019年11月25日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/xiaojianwei/p/11927121.html">
+[置顶]    div中宽高度自适应文字换行居中问题解决
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：在实现文本内容居中时，使用position定位居中无法解决，需要给宽高固定值才可以，但又不想给值，所以在网上查询到这样一个例子，特写出来予以保留，div中宽高度自适应文字换行居中问题解决。            <a href="https://www.cnblogs.com/xiaojianwei/p/11927121.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-11-25 13:13 健伟博客 阅读 (228) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=11927121" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xiaojianwei/archive/2019/04/26.html">2019年4月26日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/xiaojianwei/p/10775325.html">
+[置顶]    千峰公开课徐老师讲解前端前沿技术总结
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：web前端前沿技术            <a href="https://www.cnblogs.com/xiaojianwei/p/10775325.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-04-26 17:02 健伟博客 阅读 (56) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10775325" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/xiaojianwei/p/10775152.html">
+[置顶]    网站被k到可以使用关键词搜索到首页优化总结
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：<img src="http://image.so.com/view?q=seo&amp;src=tab_www&amp;correct=seo&amp;ancestor=list&amp;cmsid=a0ead1ce3288222a22ed788bc68aa30f&amp;cmran=0&amp;cmras=6&amp;cn=0&amp;gn=0&amp;kn=14&amp;fsn=74#id=1f524a3c3af494e12d2730064c5a70e9&amp;prevsn=0&amp;currsn=74" class="desc_img">网站被降权解决方法总结！            <a href="https://www.cnblogs.com/xiaojianwei/p/10775152.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-04-26 16:44 健伟博客 阅读 (52) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10775152" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xiaojianwei/archive/2019/01/14.html">2019年1月14日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/xiaojianwei/p/10267988.html">
+[置顶]    SEO基础内容
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：学习SEO人群 网络设计师 网站站长 搜索引擎相关人员 网络营销顾问 企业主 搜索引擎 Yahoo msn google baidu SEM包括SEO，竞价排名等 搜索引擎爬虫流程 派出爬虫-&gt;爬行流行的网站-&gt;通过爬行到的网站里面的链接再接着爬行-&gt;整理爬取到的内容-&gt;将数据压缩、加密 用户搜索的            <a href="https://www.cnblogs.com/xiaojianwei/p/10267988.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2019-01-14 17:22 健伟博客 阅读 (107) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10267988" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xiaojianwei/archive/2018/12/05.html">2018年12月5日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/xiaojianwei/p/10071077.html">
+[置顶]    react项目后台及上线步骤
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：应同学要求，本人将react项目创建后台及上线流程书写如下： 前端部分 略…… 后台部分 （注：这里的后台是用的nodejs搭建的，使用的是express框架+ejs模板） 首先通过express快速搭建后台环境 有可能你的电脑里面没有全局安装express获安装了页显示不是内部命令，这时，就需要使            <a href="https://www.cnblogs.com/xiaojianwei/p/10071077.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2018-12-05 15:14 健伟博客 阅读 (1253) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=10071077" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xiaojianwei/archive/2020/04/24.html">2020年4月24日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/xiaojianwei/p/12768464.html">
+    一个企业网站项目制作总结
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：一个企业网站项目制作总结 使用技术： Html+css+jquery+swiper+swiper.animated.css+animated.css 负责内容： 1、与甲方负责人确定wap端页面 2、Wap端静态页面制作与兼容性处理 3、Wap端页面交互效果添加 4、Pc端页面样式迭代与兼容性处理             <a href="https://www.cnblogs.com/xiaojianwei/p/12768464.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-24 16:44 健伟博客 阅读 (2) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12768464" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xiaojianwei/archive/2020/04/15.html">2020年4月15日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/xiaojianwei/p/12704536.html">
+    在swiper-slide中水平垂直居中元素flex实现
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：在swiper-slide中水平垂直居中元素 flex实现            <a href="https://www.cnblogs.com/xiaojianwei/p/12704536.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-15 12:59 健伟博客 阅读 (15) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12704536" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xiaojianwei/archive/2020/04/11.html">2020年4月11日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/xiaojianwei/p/12678430.html">
+    wap端一屏背景页面浏览器/手机兼容性问题
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：wap端一屏背景页面浏览器/手机兼容性问题            <a href="https://www.cnblogs.com/xiaojianwei/p/12678430.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-11 11:32 健伟博客 阅读 (9) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12678430" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xiaojianwei/archive/2020/04/05.html">2020年4月5日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/xiaojianwei/articles/12638882.html">
+    移动端自适应rem小米官方写法
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：// 移动端自适应代码 ! function(e) { var t = e.document, n = t.documentElement, i = e.devicePixelRatio || 1, a = &quot;orientationchange&quot; in e ? &quot;orientationchange&quot;            <a href="https://www.cnblogs.com/xiaojianwei/articles/12638882.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-04-05 20:32 健伟博客 阅读 (2) 评论 (0)
+<a href="https://i.cnblogs.com/EditArticles.aspx?postid=12638882" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xiaojianwei/archive/2020/03/19.html">2020年3月19日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/xiaojianwei/p/12525677.html">
+    属性title样式自定义
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：属性title样式自定义            <a href="https://www.cnblogs.com/xiaojianwei/p/12525677.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-19 17:22 健伟博客 阅读 (65) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12525677" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xiaojianwei/archive/2020/03/05.html">2020年3月5日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/xiaojianwei/p/12421699.html">
+    swiper实现内容自适应匀速滚动
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：swiper实现内容自适应匀速滚动            <a href="https://www.cnblogs.com/xiaojianwei/p/12421699.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-03-05 18:08 健伟博客 阅读 (130) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12421699" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xiaojianwei/archive/2020/02/20.html">2020年2月20日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/xiaojianwei/p/12336124.html">
+    VSCode配置之open-with-Live-Server 无法打开浏览器【解决方法】
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：如果你的vscode编辑器打开浏览器时默认打开的是iE,想要把它改为chrome，怎么办呢？看里面，有你想要的内容。            <a href="https://www.cnblogs.com/xiaojianwei/p/12336124.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-02-20 16:05 健伟博客 阅读 (1467) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12336124" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xiaojianwei/archive/2020/02/02.html">2020年2月2日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/xiaojianwei/p/12251137.html">
+    Vue.js_devtools_5.1.0.zip【需要的可自行下载】
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：Vue.js_devtools_5.1.0.zip            <a href="https://www.cnblogs.com/xiaojianwei/p/12251137.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-02-02 10:05 健伟博客 阅读 (99) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12251137" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xiaojianwei/archive/2020/01/18.html">2020年1月18日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/xiaojianwei/p/12209471.html">
+    js异步执行 按需加载 三种方式 
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：函数引用 将所需加载方法放在匿名函数中传入            <a href="https://www.cnblogs.com/xiaojianwei/p/12209471.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-01-18 16:38 健伟博客 阅读 (159) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12209471" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2" href="https://www.cnblogs.com/xiaojianwei/p/12209147.html">
+    arguments.callee实现深拷贝
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：最近正在看一个腾讯课堂里面的学习视频中的js知识点，然后有一个深拷贝的题，于是就做了一下，使用arguments.callee实现深拷贝。            <a href="https://www.cnblogs.com/xiaojianwei/p/12209147.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">
+
+posted @ 2020-01-18 15:24 健伟博客 阅读 (28) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12209147" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/xiaojianwei/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2020 健伟博客
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    <div id="page_end_html">
+        <canvas id="canvas" width="1366" height="657" style="position: fixed; left: 0px; right: 0px; top: 0px; bottom: 0px; z-index: -1;"></canvas>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,864 @@
+﻿
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>2P - 和你一起玩</title>
+    <meta name="csrf-param" content="_csrf">
+    <meta name="csrf-token" content="GqMNqQnJ5_ZNDgT2Md3LoDMSMvB-eTnVo4rKdlW58q4iznjCOuSrshtha7JorJ3BdFRHrwwpWqDSxowpEN-9-g==">
+    <meta property="og:title" content="2P - 和你一起玩" />
+    <meta property="og:url" content="http://www.2p.com/" />
+    <meta property="og:image" content="//ue.2pcdn.com/b/lib/logo/share.png" />
+    <meta property="og:site_name" content="2P" />
+    <meta property="og:description" content="&ldquo;我们都是萌新，努力假装大佬&rdquo;" />
+          <link rel="canonical" href="https://www.2p.com/" />
+  <meta name="bizStatistics" data-biz-id="1000126258" data-module-id="home" data-view-id="index" />
+  <meta name="description" content="2P是一个为你甄选、评鉴最新的高品质Steam游戏的平台。Steam游戏大佬们在这里聚集，从每日最新上线的Steam游戏中精选出值得一玩的好游戏，进行评鉴、交流、分享，让你不错过每一款优秀的Steam游戏作品，加入2P大佬的行列，让我们和你一起玩游戏！" />
+  <meta name="keywords" content="Steam游戏,好玩的游戏,新游戏,2P" />   
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit">    
+    <link type="image/x-icon" rel="icon" href="//ue.2pcdn.com/b/lib/logo/favicon-hd.ico" />
+    <link type="image/x-icon" rel="shortcut icon" href="//ue.2pcdn.com/b/lib/logo/favicon.ico" />
+
+    <link href="//ue.17173cdn.com/a/lib/swiper-3.4.2.min.css" rel="stylesheet">
+    
+            <link href="https://ue.2pcdn.com/b/epic/v2.2.004/css/common.937994a63e.css" rel="stylesheet">    
+    <link href="https://ue.2pcdn.com/b/epic/v2.2.004/css/site-index.937994a63e.css" rel="stylesheet">
+    <!--2020.4.4-->
+    <script type="text/javascript">
+      var nowDate20200404 = '20200423';
+      if (nowDate20200404 == '20200404') {
+        var head = document.head || document.getElementsByTagName("head")[0];
+        var grayStyleSheet = document.createElement('style');
+        grayStyleSheet.innerHTML='html{-webkit-filter:grayscale(1);-moz-filter:grayscale(1);-ms-filter:grayscale(1);-o-filter:grayscale(1);filter:grayscale(1);}html,body{filter:progid:DXImageTransform.Microsoft.BasicImage(grayScale=1)}';
+        head.appendChild(grayStyleSheet);
+      }
+    </script>
+</head>
+
+<body class="">
+    <script>
+        if(!window.Promise){
+            let browserMsg=document.createElement("div");
+            let first=document.body.firstChild;
+            browserMsg.innerHTML="请使用最新版Chrome,Edge,Firefox浏览器以保证浏览体验."
+            browserMsg.className = 'browser-msg';
+            document.body.insertBefore(browserMsg, first)
+        }
+    </script>
+            <div class="wrap" >
+    
+<header class="header " ref="topbar">
+  <div class="header-in">
+              <h1 class="logo">
+          <a href="//www.2p.com/"><img src="//ue.2pcdn.com/b/lib/logo/normal.png" alt="2p"></a>
+        </h1>
+            
+      <nav class="nav">
+        <a href="//www.2p.com/">首页</a>
+        <a href="//www.2p.com/daily-games" >新游前线</a>
+        <a href="//www.2p.com/firefly" >萤火虫</a>
+        <a href="//www.2p.com/articles" >文章</a>
+        <a href="//www.2p.com/community" >社区</a>
+        <a href="https://games.2p.com" target="_blank">游戏发行</a>
+      </nav>
+      <form action="/search" style="display:none" v-show="isSearchShow" @submit="!kw && $event.preventDefault()">
+        <div class="search">
+          <input type="text"  v-model="kw" class="input-search" autocomplete="off" placeholder="搜索你感兴趣的内容" name="kw">
+          <button class="btn-search"></button>
+        </div>
+      </form>
+      <div class="user">
+        <div class="notification floatingLayer" ref="notification" v-show="isLoggedIn" style="display:none">
+          <a href="//www.2p.com/system-notifications" class="bell" :class="{dot: hasUnread}"  target="_blank"></a>
+          <div class="info floatingLayer-con">
+            <div class="in">
+              <ul class="list-channel">
+                <li><a href="//www.2p.com/system-notifications" target="_blank">系统消息<span class="count-notifi" :class="{ex : messageNum > 9 || typeof messageNum === 'string'}" v-if="messageNum">{{messageNum}}</span></a></li>
+                <li><a href="//www.2p.com/interactive-notifications" target="_blank">互动消息<span class="count-notifi" :class="{ex : interactionNum > 9 || typeof interactionNum === 'string'}" v-if="interactionNum">{{interactionNum}}</span></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="detail floatingLayer" v-show="isLoggedIn" style="display:none">
+          <div class="avatar">
+            <a href="//www.2p.com/user/index" ><img :src="portrait" width="40" height="40" :alt="nickName"></a>
+          </div>
+          <div class="info floatingLayer-con">
+            <div class="in">
+              <span class="name">{{nickName}}</span>
+              <ul class="list-channel">
+                <li class="my-game"><a href="//www.2p.com/user/games" target="_blank">我的游戏</a></li>
+                <li class="my-article"><a href="//www.2p.com/user/articles" target="_blank">我的文章</a></li>
+                <li class="to-write" v-show="connoisseurStatus" style="display:none"><a href="//www.2p.com/article/publish?source=4" target="_blank">写文章</a></li>
+              </ul>
+              <div class="handle">
+                <a class="logout" href="javascript:;" @click="logout">退出</a>
+                <a class="config" href="//www.2p.com/user/profile" target="_blank"><e-icon type="config"></e-icon></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="btn-login">
+          <a v-if="!isLoggedIn" href="//www.2p.com/site/login">登录</a>
+          <a v-if="!isLoggedIn" href="//passport.17173.com/register" target="_blank">注册</a>
+        </div>
+      </div>
+  </div>
+</header>
+    <div class="content">
+        
+
+
+
+
+
+<div class="pn-fs">
+  <div class="pn-in">
+    <div class="pn-c1">
+      <div class="mod-focus js-focus">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+                          <div class="swiper-slide">
+                <a href="https://www.2p.com/article/282951" target="_blank">
+                  <img
+                    src="//i.17173cdn.com/lkyr0a/YWxqaGBf/2p/20200423/pMkbJAbogthtaEt.jpg!a-4-x480.jpg"
+                    width="720"
+                    height="400"
+                    alt="2020年3月Steam最畅销新游榜单出炉，榜单特卖活动同步进行中"
+                  />
+                  <div class="txt-box">
+                    <div class="tit">2020年3月Steam最畅销新游榜单出炉，榜单特卖活动同步进行中</div>
+                  </div>
+                </a>
+              </div>
+                          <div class="swiper-slide">
+                <a href="https://www.2p.com/article/282924" target="_blank">
+                  <img
+                    src="//i.17173cdn.com/lkyr0a/YWxqaGBf/2p/20200420/eDnpadboglawhCg.png!a-4-x480.jpg"
+                    width="720"
+                    height="400"
+                    alt="【0413-0419】Steam商店一周销量排行：《骑马与砍杀2：霸主》三连冠！！"
+                  />
+                  <div class="txt-box">
+                    <div class="tit">【0413-0419】Steam商店一周销量排行：《骑马与砍杀2：霸主》三连冠！！</div>
+                  </div>
+                </a>
+              </div>
+                          <div class="swiper-slide">
+                <a href="https://www.2p.com/article/282923" target="_blank">
+                  <img
+                    src="//i.17173cdn.com/lkyr0a/YWxqaGBf/2p/20200327/FmOPNcboencFtnl.jpg!a-4-x480.jpg"
+                    width="720"
+                    height="400"
+                    alt="【4月20日更新】近期Steam商店福利，多款游戏限时免费领取"
+                  />
+                  <div class="txt-box">
+                    <div class="tit">【4月20日更新】近期Steam商店福利，多款游戏限时免费领取</div>
+                  </div>
+                </a>
+              </div>
+                          <div class="swiper-slide">
+                <a href="https://www.2p.com/article/282911" target="_blank">
+                  <img
+                    src="//i.17173cdn.com/lkyr0a/YWxqaGBf/2p/20200417/HgEDyybogdkmhnD.jpg!a-4-x480.jpg"
+                    width="720"
+                    height="400"
+                    alt="Epic商店本周免费领取《正当防卫4》与《奥瑞利亚纪行》"
+                  />
+                  <div class="txt-box">
+                    <div class="tit">Epic商店本周免费领取《正当防卫4》与《奥瑞利亚纪行》</div>
+                  </div>
+                </a>
+              </div>
+                      </div>
+          <!-- Add Arrows -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <!-- Add Pagination -->
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+    <div class="pn-c2">
+      <div class="pn-hd">
+        <div class="tit">
+          <div class="channel">
+            <i class="ico-channel"></i>
+            <span class="cn">每日新热</span>
+            <span class="en">HOT NEWS</span>
+          </div>
+          <div class="txt">“众人目光所至” </div>
+        </div>
+      </div>
+      <div class="pn-bd">
+        <ul class="news-list">
+                      <li>
+              <a href="//www.2p.com/article/214758" target="_blank">
+                <div class="txt-box">
+                    <div class="tit">
+                      <span>【MHW】全特殊衣装获取方式整理</span>
+                    </div>
+                </div>
+                <div class="pic">
+                    <img  class="lazyload " style="" src="data:image/svg+xml;utf8,%3Csvg%20version%3D'1.1'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20%20width%3D'1920'%20height%3D'1080'%3E%3Crect%20width%3D'100%25'%20height%3D'100%25'%20style%3D'fill%3A%2355484e'%20%2F%3E%3C%2Fsvg%3E" data-src="//i.17173cdn.com/gdthue/YWxqaGBf/snsapp/20180806/PqVevWbmufnCgfb.jpg!a-3-800x.jpg" width="160" height="90" alt="【MHW】全特殊衣装获取方式整理">
+                </div>
+              </a>
+            </li>
+                      <li>
+              <a href="//www.2p.com/article/187099" target="_blank">
+                <div class="txt-box">
+                    <div class="tit">
+                      <span>心跳文学部全程记录（剧透）</span>
+                    </div>
+                </div>
+                <div class="pic">
+                    <img  class="lazyload " style="" src="data:image/svg+xml;utf8,%3Csvg%20version%3D'1.1'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20%20width%3D'550'%20height%3D'309'%3E%3Crect%20width%3D'100%25'%20height%3D'100%25'%20style%3D'fill%3A%23d5c1cd'%20%2F%3E%3C%2Fsvg%3E" data-src="//i.17173cdn.com/gdthue/YWxqaGBf/snsapp/20180714/RdBBgVbmsmsFtcp.jpg!a-3-800x.jpg" width="160" height="90" alt="心跳文学部全程记录（剧透）">
+                </div>
+              </a>
+            </li>
+                      <li>
+              <a href="//www.2p.com/article/216040" target="_blank">
+                <div class="txt-box">
+                    <div class="tit">
+                      <span>【MHW】猫的特殊装备获取方法及效果</span>
+                    </div>
+                </div>
+                <div class="pic">
+                    <img  class="lazyload " style="" src="data:image/svg+xml;utf8,%3Csvg%20version%3D'1.1'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20%20width%3D'1920'%20height%3D'1080'%3E%3Crect%20width%3D'100%25'%20height%3D'100%25'%20style%3D'fill%3A%23362b33'%20%2F%3E%3C%2Fsvg%3E" data-src="//i.17173cdn.com/gdthue/YWxqaGBf/snsapp/20180806/WcnHQAbmuhrbwgb.jpg!a-3-800x.jpg" width="160" height="90" alt="【MHW】猫的特殊装备获取方法及效果">
+                </div>
+              </a>
+            </li>
+                      <li>
+              <a href="//www.2p.com/article/282934" target="_blank">
+                <div class="txt-box">
+                    <div class="tit">
+                      <span>非东方玩家也能通关的东方同人游戏</span>
+                    </div>
+                </div>
+                <div class="pic">
+                    <img  class="lazyload " style="" src="data:image/svg+xml;utf8,%3Csvg%20version%3D'1.1'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20%20width%3D'460'%20height%3D'215'%3E%3Crect%20width%3D'100%25'%20height%3D'100%25'%20style%3D'fill%3A%23000'%20%2F%3E%3C%2Fsvg%3E" data-src="//i.17173cdn.com/lkyr0a/YWxqaGBf/2p/20200422/NtrnixbogpDnFgb.jpg!a-3-800x.jpg" width="160" height="90" alt="非东方玩家也能通关的东方同人游戏">
+                </div>
+              </a>
+            </li>
+                      <li>
+              <a href="//www.2p.com/article/282943" target="_blank">
+                <div class="txt-box">
+                    <div class="tit">
+                      <span>游戏之心第五集：发行商直播带货！走进欧洲独立游戏人的生活与梦想！</span>
+                    </div>
+                </div>
+                <div class="pic">
+                    <img  class="lazyload " style="" src="data:image/svg+xml;utf8,%3Csvg%20version%3D'1.1'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20%20width%3D'1267'%20height%3D'713'%3E%3Crect%20width%3D'100%25'%20height%3D'100%25'%20style%3D'fill%3A%2387877b'%20%2F%3E%3C%2Fsvg%3E" data-src="//i.17173cdn.com/lkyr0a/YWxqaGBf/2p/20200422/XRkKHxbogqpgbho.png!a-3-800x.png" width="160" height="90" alt="游戏之心第五集：发行商直播带货！走进欧洲独立游戏人的生活与梦想！">
+                </div>
+              </a>
+            </li>
+                  </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="pn-recommended">
+  <div class="pn-in">
+    <div class="pn-hd">
+      <div class="tit">
+        <div class="channel">
+          <i class="ico-channel"></i>
+          <span class="cn">新游前线</span>
+          <span class="en">RECOMMENDED</span>
+        </div>
+        <div class="txt">“出发新冒险”</div>
+      </div>
+      <div class="more">
+        <a href="//www.2p.com/daily-games">更多</a>
+      </div>
+    </div>
+    <div class="pn-bd">
+      <ul class="rating-list">
+                  <li>
+            <a href="//www.2p.com/game/10093608" target="_blank" class="con">
+              <div class="pic">
+                                <img  class="lazyload " style="" src="data:image/svg+xml;utf8,%3Csvg%20version%3D'1.1'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20%20width%3D'240'%20height%3D'336'%3E%3Crect%20width%3D'100%25'%20height%3D'100%25'%20style%3D'fill%3A%2314100f'%20%2F%3E%3C%2Fsvg%3E" data-src="//i.17173cdn.com/0561y4/YWxqaGBf/gamebase/game-cover-vertical/VVmjvsbofyzijmA.jpg!a-3-800x.jpg" width="186" height="260" alt="九霄缳神记">
+                <div class="name">九霄缳神记</div>
+              </div>
+              <div class="desc">东方幻想题材的动作冒险游戏，以爽快的即时战斗为主体，融合了众多冒险元素及解谜设计。</div>
+            </a>
+            <div class="time">
+                                            <span>4-13</span>
+                                        </div>
+          </li>
+                  <li>
+            <a href="//www.2p.com/game/10101858" target="_blank" class="con">
+              <div class="pic">
+                                  <e-tooltip class="tag" content="鉴赏家正在试玩">试玩中</e-tooltip>
+                                <img  class="lazyload " style="" src="data:image/svg+xml;utf8,%3Csvg%20version%3D'1.1'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20%20width%3D'800'%20height%3D'600'%3E%3Crect%20width%3D'100%25'%20height%3D'100%25'%20style%3D'fill%3A%23f5efe9'%20%2F%3E%3C%2Fsvg%3E" data-src="//i.17173cdn.com/0561y4/YWxqaGBf/gamebase/game-cover-vertical/CPTVhAbntjixCbB.jpg!a-3-800x.jpg" width="186" height="260" alt="盲点">
+                <div class="name">盲点</div>
+              </div>
+              <div class="desc">在游戏中玩家独自从黑暗中醒来，发现自己熟悉的家变得和平时有些不同，来自神秘人的短信更让他充满疑惑。</div>
+            </a>
+            <div class="time">
+                                            <span class="none"></span>
+                                        </div>
+          </li>
+                  <li>
+            <a href="//www.2p.com/game/10102694" target="_blank" class="con">
+              <div class="pic">
+                                <img  class="lazyload " style="" src="data:image/svg+xml;utf8,%3Csvg%20version%3D'1.1'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20%20width%3D'800'%20height%3D'600'%3E%3Crect%20width%3D'100%25'%20height%3D'100%25'%20style%3D'fill%3A%23f5efe9'%20%2F%3E%3C%2Fsvg%3E" data-src="//i.17173cdn.com/0561y4/YWxqaGBf/gamebase/game-cover-vertical/RshtRVboekABqcs.jpg!a-3-800x.jpg" width="186" height="260" alt="东方华彩乱战2">
+                <div class="name">东方华彩乱战2</div>
+              </div>
+              <div class="desc">一款东方题材的全新的地下城Rogue清版射击游戏。</div>
+            </a>
+            <div class="time">
+                                            <span class="none"></span>
+                                        </div>
+          </li>
+                  <li>
+            <a href="//www.2p.com/game/10102738" target="_blank" class="con">
+              <div class="pic">
+                                <img  class="lazyload " style="" src="data:image/svg+xml;utf8,%3Csvg%20version%3D'1.1'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20%20width%3D'800'%20height%3D'600'%3E%3Crect%20width%3D'100%25'%20height%3D'100%25'%20style%3D'fill%3A%23f5efe9'%20%2F%3E%3C%2Fsvg%3E" data-src="//i.17173cdn.com/0561y4/YWxqaGBf/gamebase/game-cover-vertical/MbTeWobofywDlci.jpg!a-3-800x.jpg" width="186" height="260" alt="东方祈华梦">
+                <div class="name">东方祈华梦</div>
+              </div>
+              <div class="desc">一款以东方project系列为原作的同人弹幕射击游戏。</div>
+            </a>
+            <div class="time">
+                                            <span class="none"></span>
+                                        </div>
+          </li>
+                  <li>
+            <a href="//www.2p.com/game/10091693" target="_blank" class="con">
+              <div class="pic">
+                                <img  class="lazyload " style="" src="data:image/svg+xml;utf8,%3Csvg%20version%3D'1.1'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20%20width%3D'239'%20height%3D'336'%3E%3Crect%20width%3D'100%25'%20height%3D'100%25'%20style%3D'fill%3A%235b4f55'%20%2F%3E%3C%2Fsvg%3E" data-src="//i.17173cdn.com/0561y4/YWxqaGBf/gamebase/game-cover-vertical/BqEeFGbmCgEgvEp.jpg!a-3-800x.jpg" width="186" height="260" alt="伊甸之路">
+                <div class="name">伊甸之路</div>
+              </div>
+              <div class="desc">在紧张刺激的节奏中，施放各样的法术。与各类强大的敌人交战，收集各种卡牌和神器。</div>
+            </a>
+            <div class="time">
+                                            <span>3-25</span>
+                                        </div>
+          </li>
+                  <li>
+            <a href="//www.2p.com/game/10102675" target="_blank" class="con">
+              <div class="pic">
+                                <img  class="lazyload " style="" src="data:image/svg+xml;utf8,%3Csvg%20version%3D'1.1'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20%20width%3D'800'%20height%3D'600'%3E%3Crect%20width%3D'100%25'%20height%3D'100%25'%20style%3D'fill%3A%23f5efe9'%20%2F%3E%3C%2Fsvg%3E" data-src="//i.17173cdn.com/0561y4/YWxqaGBf/gamebase/game-cover-vertical/KWBsYJbodwknmcr.jpg!a-3-800x.jpg" width="186" height="260" alt="魔王大人，击退勇者吧">
+                <div class="name">魔王大人，击退勇者吧</div>
+              </div>
+              <div class="desc">你被地下城公司聘为地下城守护者，你的工作只有一个：守护地下城！</div>
+            </a>
+            <div class="time">
+                                            <span>3-18</span>
+                                        </div>
+          </li>
+              </ul>
+    </div>
+  </div>
+</div>
+<div class="pn-firefly">
+  <div class="pn-in">
+    <div class="pn-hd">
+      <div class="tit">
+        <div class="channel">
+          <i class="ico-channel"></i>
+          <span class="cn">萤火虫</span>
+          <span class="en">FIREFLY</span>
+        </div>
+        <div class="txt">“未开拓地域”<e-tooltip class="about" content="什么是萤火虫"><a href="//www.2p.com/firefly/about" target="_blank">?</a></e-tooltip></div>
+      </div>
+      <div class="more">
+        <a href="//www.2p.com/firefly">更多</a>
+      </div>
+    </div>
+    <div class="pn-bd">
+      <ul class="firefly-list">
+                  <li>
+            <a href="//www.2p.com/firefly/198" target="_blank" class="con">
+              <img  class="lazyload " style="" src="data:image/svg+xml;utf8,%3Csvg%20version%3D'1.1'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20%20width%3D'240'%20height%3D'134'%3E%3Crect%20width%3D'100%25'%20height%3D'100%25'%20style%3D'fill%3A%2390979d'%20%2F%3E%3C%2Fsvg%3E" data-src="//i.17173cdn.com/0561y4/YWxqaGBf/gamebase/game-cover-horizontal/UBoQpGbnhedhnyr.jpg!a-3-800x.jpg" width="580" height="310" class="pic" alt="">
+                            <div class="info">
+                <div class="c1">
+                  <div class="cover">
+                    <img  class="lazyload " style="" src="data:image/svg+xml;utf8,%3Csvg%20version%3D'1.1'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20%20width%3D'199'%20height%3D'278'%3E%3Crect%20width%3D'100%25'%20height%3D'100%25'%20style%3D'fill%3A%23939a9f'%20%2F%3E%3C%2Fsvg%3E" data-src="//i.17173cdn.com/0561y4/YWxqaGBf/gamebase/game-cover-vertical/PHWidUbnhedhnwk.jpg!a-3-800x.jpg" width="70" height="100" alt="">
+                  </div>
+                  <div class="txt-box">
+                    <div class="name">白色实验室</div>
+                    <div class="type">策略 / 塔防 / 科幻</div>
+                  </div>
+                </div>
+                <div class="c2">
+                  <div class="leaving">剩余<b>3</b>份</div>
+                  <div class="btn-apply">免费申请</div>
+                </div>
+              </div>
+            </a>
+          </li>
+                  <li>
+            <a href="//www.2p.com/firefly/146" target="_blank" class="con">
+              <img  class="lazyload " style="" src="data:image/svg+xml;utf8,%3Csvg%20version%3D'1.1'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20%20width%3D'240'%20height%3D'135'%3E%3Crect%20width%3D'100%25'%20height%3D'100%25'%20style%3D'fill%3A%234c4d4a'%20%2F%3E%3C%2Fsvg%3E" data-src="//i.17173cdn.com/0561y4/YWxqaGBf/gamebase/game-cover-horizontal/rSrzDYbmDjnDjdq.jpg!a-3-800x.jpg" width="580" height="310" class="pic" alt="">
+                            <div class="info">
+                <div class="c1">
+                  <div class="cover">
+                    <img  class="lazyload " style="" src="data:image/svg+xml;utf8,%3Csvg%20version%3D'1.1'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20%20width%3D'240'%20height%3D'336'%3E%3Crect%20width%3D'100%25'%20height%3D'100%25'%20style%3D'fill%3A%23756a5a'%20%2F%3E%3C%2Fsvg%3E" data-src="//i.17173cdn.com/0561y4/YWxqaGBf/gamebase/game-cover-vertical/GeIaRJbmDjnDjaB.jpg!a-3-800x.jpg" width="70" height="100" alt="">
+                  </div>
+                  <div class="txt-box">
+                    <div class="name">利兹之心：钢铁轮舞曲</div>
+                    <div class="type">飞行射击 / 弹幕</div>
+                  </div>
+                </div>
+                <div class="c2">
+                  <div class="leaving">剩余<b>17</b>份</div>
+                  <div class="btn-apply">免费申请</div>
+                </div>
+              </div>
+            </a>
+          </li>
+              </ul>
+    </div>
+  </div>
+</div>
+<div class="pn-reviews">
+  <div class="pn-in">
+    <div class="pn-hd">
+      <div class="tit">
+        <div class="channel">
+          <i class="ico-channel"></i>
+          <span class="cn">鉴赏家精选</span>
+          <span class="en">REVIEWS</span>
+        </div>
+        <div class="txt">“资深者日志”</div>
+      </div>
+      <div class="more">
+        <a href="//www.2p.com/articles/review">更多</a>
+      </div>
+    </div>
+    <div class="pn-bd">
+      <ul class="reviews-list" :class="{'reviews-list-ex':6 < 5}" :style="{ '--col': 6 }">
+                  <li :class="{active:activeTab == 0}" @mouseover="handleChange(0)">
+            <div class="con">
+              <div class="cover">
+                <a href="//www.2p.com/article/282934" target="_blank"><img  class="lazyload " style="" src="data:image/svg+xml;utf8,%3Csvg%20version%3D'1.1'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20%20width%3D'1'%20height%3D'1'%3E%3Crect%20width%3D'100%25'%20height%3D'100%25'%20style%3D'fill%3A%23000'%20%2F%3E%3C%2Fsvg%3E" data-src="//i.17173cdn.com/0561y4/YWxqaGBf/gamebase/game-cover-vertical/RshtRVboekABqcs.jpg!a-3-800x.jpg" width="228" height="320" alt="非东方玩家也能通关的东方同人游戏"></a>
+                <div class="txt-box">
+                  <div class="tit">
+                    <p>非东方玩家也能通关的东方同人游戏</p>
+                  </div>
+                </div>
+              </div>
+              <div class="info">
+                <a href="//www.2p.com/user/115386899" target="_blank"><img src="//i.17173cdn.com/avatar/YWxqaGBf/b8/9b/cc/115386899/hd.jpg" class="avatar" width="52" height="52" alt="没用老铁" ></a>
+                <div class="author">
+                  <span class="name"><a href="//www.2p.com/user/115386899" target="_blank">没用老铁</a></span>
+                  <span class="eval"> 评《<a href="//www.2p.com/game/10102694" target="_blank">东方华彩乱战2</a>》</span>
+                </div>
+                <div class="tit">
+                  <p><a href="//www.2p.com/article/282934" target="_blank">非东方玩家也能通关的东方同人游戏</a></p>
+                </div>
+                <div class="desc">关键词：车万（东方）、弹幕、轻度Rogue。</div>
+              </div>
+            </div>
+          </li>
+                  <li :class="{active:activeTab == 1}" @mouseover="handleChange(1)">
+            <div class="con">
+              <div class="cover">
+                <a href="//www.2p.com/article/282917" target="_blank"><img  class="lazyload " style="" src="data:image/svg+xml;utf8,%3Csvg%20version%3D'1.1'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20%20width%3D'1'%20height%3D'1'%3E%3Crect%20width%3D'100%25'%20height%3D'100%25'%20style%3D'fill%3A%23000'%20%2F%3E%3C%2Fsvg%3E" data-src="//i.17173cdn.com/0561y4/YWxqaGBf/gamebase/game-cover-vertical/VVmjvsbofyzijmA.jpg!a-3-800x.jpg" width="228" height="320" alt="神-限制九霄世界繁荣向上的&ldquo;牢笼&rdquo;"></a>
+                <div class="txt-box">
+                  <div class="tit">
+                    <p>神-限制九霄世界繁荣向上的&ldquo;牢笼&rdquo;</p>
+                  </div>
+                </div>
+              </div>
+              <div class="info">
+                <a href="//www.2p.com/user/138400512" target="_blank"><img src="//i.17173cdn.com/avatar/YWxqaGBf/bd/2f/ae/138400512/hd.jpg" class="avatar" width="52" height="52" alt="snareDJ" ></a>
+                <div class="author">
+                  <span class="name"><a href="//www.2p.com/user/138400512" target="_blank">snareDJ</a></span>
+                  <span class="eval"> 评《<a href="//www.2p.com/game/10093608" target="_blank">九霄缳神记</a>》</span>
+                </div>
+                <div class="tit">
+                  <p><a href="//www.2p.com/article/282917" target="_blank">神-限制九霄世界繁荣向上的&ldquo;牢笼&rdquo;</a></p>
+                </div>
+                <div class="desc">期待与现实在大多数时候总是不相称的，因为作为人的贪婪使我们总想要更多，却往往忽略所期待的东西本身能够达到的极限&hellip;&hellip;</div>
+              </div>
+            </div>
+          </li>
+                  <li :class="{active:activeTab == 2}" @mouseover="handleChange(2)">
+            <div class="con">
+              <div class="cover">
+                <a href="//www.2p.com/article/282915" target="_blank"><img  class="lazyload " style="" src="data:image/svg+xml;utf8,%3Csvg%20version%3D'1.1'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20%20width%3D'1'%20height%3D'1'%3E%3Crect%20width%3D'100%25'%20height%3D'100%25'%20style%3D'fill%3A%23000'%20%2F%3E%3C%2Fsvg%3E" data-src="//i.17173cdn.com/0561y4/YWxqaGBf/gamebase/game-cover-vertical/MbTeWobofywDlci.jpg!a-3-800x.jpg" width="228" height="320" alt="让幻想乡染上你的颜色&mdash;&mdash;节制的弹幕传说"></a>
+                <div class="txt-box">
+                  <div class="tit">
+                    <p>让幻想乡染上你的颜色&mdash;&mdash;节制的弹幕传说</p>
+                  </div>
+                </div>
+              </div>
+              <div class="info">
+                <a href="//www.2p.com/user/137894742" target="_blank"><img src="//i.17173cdn.com/avatar/YWxqaGBf/7a/8e/8c/137894742/hd.jpg" class="avatar" width="52" height="52" alt="月骨星魂" ></a>
+                <div class="author">
+                  <span class="name"><a href="//www.2p.com/user/137894742" target="_blank">月骨星魂</a></span>
+                  <span class="eval"> 评《<a href="//www.2p.com/game/10102738" target="_blank">东方祈华梦</a>》</span>
+                </div>
+                <div class="tit">
+                  <p><a href="//www.2p.com/article/282915" target="_blank">让幻想乡染上你的颜色&mdash;&mdash;节制的弹幕传说</a></p>
+                </div>
+                <div class="desc">游戏副标题已明确指出《东方祈华梦》特色系统&ldquo;染色&rdquo;给这款东方同人STG带来的改变&mdash;&mdash;道中不鼓励无脑甩弹幕，而强调抓住时机利用染色击破敌人，节制地射击。</div>
+              </div>
+            </div>
+          </li>
+                  <li :class="{active:activeTab == 3}" @mouseover="handleChange(3)">
+            <div class="con">
+              <div class="cover">
+                <a href="//www.2p.com/article/282828" target="_blank"><img  class="lazyload " style="" src="data:image/svg+xml;utf8,%3Csvg%20version%3D'1.1'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20%20width%3D'1'%20height%3D'1'%3E%3Crect%20width%3D'100%25'%20height%3D'100%25'%20style%3D'fill%3A%23000'%20%2F%3E%3C%2Fsvg%3E" data-src="//i.17173cdn.com/0561y4/YWxqaGBf/gamebase/game-cover-vertical/XWUmtgbmCgqigux.png!a-3-800x.png" width="228" height="320" alt="自己找自己，刺激不刺激？"></a>
+                <div class="txt-box">
+                  <div class="tit">
+                    <p>自己找自己，刺激不刺激？</p>
+                  </div>
+                </div>
+              </div>
+              <div class="info">
+                <a href="//www.2p.com/user/138400512" target="_blank"><img src="//i.17173cdn.com/avatar/YWxqaGBf/bd/2f/ae/138400512/hd.jpg" class="avatar" width="52" height="52" alt="snareDJ" ></a>
+                <div class="author">
+                  <span class="name"><a href="//www.2p.com/user/138400512" target="_blank">snareDJ</a></span>
+                  <span class="eval"> 评《<a href="//www.2p.com/game/10088715" target="_blank">重明鸟</a>》</span>
+                </div>
+                <div class="tit">
+                  <p><a href="//www.2p.com/article/282828" target="_blank">自己找自己，刺激不刺激？</a></p>
+                </div>
+                <div class="desc">精巧灵动的解谜玩法设计，丰富多变的解谜关卡设计，超出同类竞品几倍的游戏内容体量，让《重明鸟》无可争议地成为了本年度值得一玩的解谜游戏佳作。用&ldquo;物超所值&rdquo;四个字来形容本作再好不过了&hellip;&hellip;</div>
+              </div>
+            </div>
+          </li>
+                  <li :class="{active:activeTab == 4}" @mouseover="handleChange(4)">
+            <div class="con">
+              <div class="cover">
+                <a href="//www.2p.com/article/282806" target="_blank"><img  class="lazyload " style="" src="data:image/svg+xml;utf8,%3Csvg%20version%3D'1.1'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20%20width%3D'1'%20height%3D'1'%3E%3Crect%20width%3D'100%25'%20height%3D'100%25'%20style%3D'fill%3A%23000'%20%2F%3E%3C%2Fsvg%3E" data-src="//i.17173cdn.com/0561y4/YWxqaGBf/gamebase/game-cover-vertical/BqEeFGbmCgEgvEp.jpg!a-3-800x.jpg" width="228" height="320" alt="欲得其爽快，必先受其磨难&mdash;&mdash;《伊甸之路》"></a>
+                <div class="txt-box">
+                  <div class="tit">
+                    <p>欲得其爽快，必先受其磨难&mdash;&mdash;《伊甸之路》</p>
+                  </div>
+                </div>
+              </div>
+              <div class="info">
+                <a href="//www.2p.com/user/138952415" target="_blank"><img src="//i.17173cdn.com/avatar/YWxqaGBf/49/ac/85/138952415/hd.jpg" class="avatar" width="52" height="52" alt="黑铁斯塔姆" ></a>
+                <div class="author">
+                  <span class="name"><a href="//www.2p.com/user/138952415" target="_blank">黑铁斯塔姆</a></span>
+                  <span class="eval"> 评《<a href="//www.2p.com/game/10091693" target="_blank">伊甸之路</a>》</span>
+                </div>
+                <div class="tit">
+                  <p><a href="//www.2p.com/article/282806" target="_blank">欲得其爽快，必先受其磨难&mdash;&mdash;《伊甸之路》</a></p>
+                </div>
+                <div class="desc">虽然风格类型完全不同，但本作确实遇到了和只狼黑魂一样的问题&mdash;&mdash;作品本身能够提供极大的爽快感和满足感，但在这之前需要跨过的苦难并非是每个玩家都能承受的</div>
+              </div>
+            </div>
+          </li>
+                  <li :class="{active:activeTab == 5}" @mouseover="handleChange(5)">
+            <div class="con">
+              <div class="cover">
+                <a href="//www.2p.com/article/282752" target="_blank"><img  class="lazyload " style="" src="data:image/svg+xml;utf8,%3Csvg%20version%3D'1.1'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20%20width%3D'1'%20height%3D'1'%3E%3Crect%20width%3D'100%25'%20height%3D'100%25'%20style%3D'fill%3A%23000'%20%2F%3E%3C%2Fsvg%3E" data-src="//i.17173cdn.com/0561y4/YWxqaGBf/gamebase/game-cover-vertical/PHWidUbnhedhnwk.jpg!a-3-800x.jpg" width="228" height="320" alt="我在&ldquo;光圈科技&rdquo;玩&ldquo;积木大战&rdquo;"></a>
+                <div class="txt-box">
+                  <div class="tit">
+                    <p>我在&ldquo;光圈科技&rdquo;玩&ldquo;积木大战&rdquo;</p>
+                  </div>
+                </div>
+              </div>
+              <div class="info">
+                <a href="//www.2p.com/user/115386899" target="_blank"><img src="//i.17173cdn.com/avatar/YWxqaGBf/b8/9b/cc/115386899/hd.jpg" class="avatar" width="52" height="52" alt="没用老铁" ></a>
+                <div class="author">
+                  <span class="name"><a href="//www.2p.com/user/115386899" target="_blank">没用老铁</a></span>
+                  <span class="eval"> 评《<a href="//www.2p.com/game/10095699" target="_blank">白色实验室</a>》</span>
+                </div>
+                <div class="tit">
+                  <p><a href="//www.2p.com/article/282752" target="_blank">我在&ldquo;光圈科技&rdquo;玩&ldquo;积木大战&rdquo;</a></p>
+                </div>
+                <div class="desc">《白色实验室》是一款近未来科技风，融合了沙盒元素的塔防类型游戏。</div>
+              </div>
+            </div>
+          </li>
+              </ul>
+    </div>
+  </div>
+</div>
+<div class="pn-news">
+  <div class="pn-in">
+    <div class="pn-hd">
+      <div class="tit">
+        <div class="channel">
+          <i class="ico-channel"></i>
+          <span class="cn">新闻资讯</span>
+          <span class="en">NEWS</span>
+        </div>
+        <div class="txt">“远方传闻”</div>
+      </div>
+      <div class="more">
+        <a href="//www.2p.com/articles/news">更多</a>
+      </div>
+    </div>
+    <div class="pn-bd">
+      <ul class="article-list article-list-ex1">
+                  <li>
+            <div class="pic">
+              <a href="//www.2p.com/article/282952" target="_blank">
+                <img  class="lazyload " style="" src="data:image/svg+xml;utf8,%3Csvg%20version%3D'1.1'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20%20width%3D'1175'%20height%3D'662'%3E%3Crect%20width%3D'100%25'%20height%3D'100%25'%20style%3D'fill%3A%23948b95'%20%2F%3E%3C%2Fsvg%3E" data-src="//i.17173cdn.com/lkyr0a/YWxqaGBf/2p/20200423/JzNsMXbogtlbekd.png!a-3-800x.png" width="160" height="90" alt="治愈解谜游戏《钨丝》4月24日正式发售">
+              </a>
+            </div>
+            <div class="art-txt">
+              <div class="tit">
+                <a href="//www.2p.com/article/282952" target="_blank">治愈解谜游戏《钨丝》4月24日正式发售</a>
+              </div>
+              <div class="desc">《钨丝（Filament）》即将在本月24日正式发售！这是一款从玩法到音乐都非常治愈的解谜游戏，玩家需要通过解决阿拉巴斯特号飞船上的一系列缆线断开问题，来调查飞船上究竟发生了些什么。</div>
+              <div class="time">
+                <span v-show="timeDiffWithPast('2020-04-23 18:58:43')" style="display:none;">{{timeDiffWithPast('2020-04-23 18:58:43')}}</span>
+              </div>
+            </div>
+          </li>
+                  <li>
+            <div class="pic">
+              <a href="//www.2p.com/article/282951" target="_blank">
+                <img  class="lazyload " style="" src="data:image/svg+xml;utf8,%3Csvg%20version%3D'1.1'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20%20width%3D'800'%20height%3D'450'%3E%3Crect%20width%3D'100%25'%20height%3D'100%25'%20style%3D'fill%3A%23243d3a'%20%2F%3E%3C%2Fsvg%3E" data-src="//i.17173cdn.com/lkyr0a/YWxqaGBf/2p/20200423/DqVGTqbogthazrw.jpg!a-3-800x.jpg" width="160" height="90" alt="Steam最热新品榜单--2020年3月">
+              </a>
+            </div>
+            <div class="art-txt">
+              <div class="tit">
+                <a href="//www.2p.com/article/282951" target="_blank">Steam最热新品榜单--2020年3月</a>
+              </div>
+              <div class="desc">3 月是一个具有历史意义的月份，许多大家翘首以盼的续作得以发行。 本月的最热新品榜单中，约半数是热门系列的后续作品，其中有些系列的第一款游戏可以追溯到 20 多年前。</div>
+              <div class="time">
+                <span v-show="timeDiffWithPast('2020-04-23 17:48:37')" style="display:none;">{{timeDiffWithPast('2020-04-23 17:48:37')}}</span>
+              </div>
+            </div>
+          </li>
+                  <li>
+            <div class="pic">
+              <a href="//www.2p.com/article/282950" target="_blank">
+                <img  class="lazyload " style="" src="data:image/svg+xml;utf8,%3Csvg%20version%3D'1.1'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20%20width%3D'460'%20height%3D'215'%3E%3Crect%20width%3D'100%25'%20height%3D'100%25'%20style%3D'fill%3A%2356628c'%20%2F%3E%3C%2Fsvg%3E" data-src="//i.17173cdn.com/lkyr0a/YWxqaGBf/2p/20200423/FjceVebogsEqyke.jpg!a-3-800x.jpg" width="160" height="90" alt="2D潜行游戏《Wildfire》(野火）将于2020年5月26日在Steam上推出">
+              </a>
+            </div>
+            <div class="art-txt">
+              <div class="tit">
+                <a href="//www.2p.com/article/282950" target="_blank">2D潜行游戏《Wildfire》(野火）将于2020年5月26日在Steam上推出</a>
+              </div>
+              <div class="desc">在这款万物皆可燃烧的潜行游戏中操控元素。这是一款让你尽情施展恶作剧才华的2D潜行游戏，你需要使用元素力量燃起火焰、冻结水域和移动土壤，用智谋打败迷信的敌人。</div>
+              <div class="time">
+                <span v-show="timeDiffWithPast('2020-04-23 15:20:02')" style="display:none;">{{timeDiffWithPast('2020-04-23 15:20:02')}}</span>
+              </div>
+            </div>
+          </li>
+                  <li>
+            <div class="pic">
+              <a href="//www.2p.com/article/282949" target="_blank">
+                <img  class="lazyload " style="" src="data:image/svg+xml;utf8,%3Csvg%20version%3D'1.1'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20%20width%3D'740'%20height%3D'411'%3E%3Crect%20width%3D'100%25'%20height%3D'100%25'%20style%3D'fill%3A%23354239'%20%2F%3E%3C%2Fsvg%3E" data-src="//i.17173cdn.com/lkyr0a/YWxqaGBf/2p/20200423/vQpnVJbogsEdnlh.jpg!a-3-800x.jpg" width="160" height="90" alt="第一人称冒险游戏《变形记》预定2020年夏登陆各大平台">
+              </a>
+            </div>
+            <div class="art-txt">
+              <div class="tit">
+                <a href="//www.2p.com/article/282949" target="_blank">第一人称冒险游戏《变形记》预定2020年夏登陆各大平台</a>
+              </div>
+              <div class="desc">扮演格里高尔，变成一只小甲虫，踏上一段非凡的旅程，揭开你变形的奥秘。《变形记》是一款发生在超现实主义世界的第一人称冒险游戏，你新发现的能力是你最后且唯一的救赎希望。</div>
+              <div class="time">
+                <span v-show="timeDiffWithPast('2020-04-23 15:12:45')" style="display:none;">{{timeDiffWithPast('2020-04-23 15:12:45')}}</span>
+              </div>
+            </div>
+          </li>
+                  <li>
+            <div class="pic">
+              <a href="//www.2p.com/article/282948" target="_blank">
+                <img  class="lazyload " style="" src="data:image/svg+xml;utf8,%3Csvg%20version%3D'1.1'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20%20width%3D'460'%20height%3D'215'%3E%3Crect%20width%3D'100%25'%20height%3D'100%25'%20style%3D'fill%3A%2378544f'%20%2F%3E%3C%2Fsvg%3E" data-src="//i.17173cdn.com/lkyr0a/YWxqaGBf/2p/20200423/HILqYTbogsDtCnA.jpg!a-3-800x.jpg" width="160" height="90" alt="欢乐乱斗游戏《捣蛋大作战》计划于4月30日发售">
+              </a>
+            </div>
+            <div class="art-txt">
+              <div class="tit">
+                <a href="//www.2p.com/article/282948" target="_blank">欢乐乱斗游戏《捣蛋大作战》计划于4月30日发售</a>
+              </div>
+              <div class="desc">《捣蛋大作战》是一款具有魔性魅力的休闲欢乐乱斗游戏，在游戏中，你将扮演一名捣蛋鬼在机关重重的环境中与其他对手展开一番刺激的对决。</div>
+              <div class="time">
+                <span v-show="timeDiffWithPast('2020-04-23 15:04:16')" style="display:none;">{{timeDiffWithPast('2020-04-23 15:04:16')}}</span>
+              </div>
+            </div>
+          </li>
+                  <li>
+            <div class="pic">
+              <a href="//www.2p.com/article/282947" target="_blank">
+                <img  class="lazyload " style="" src="data:image/svg+xml;utf8,%3Csvg%20version%3D'1.1'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20%20width%3D'460'%20height%3D'215'%3E%3Crect%20width%3D'100%25'%20height%3D'100%25'%20style%3D'fill%3A%23958786'%20%2F%3E%3C%2Fsvg%3E" data-src="//i.17173cdn.com/lkyr0a/YWxqaGBf/2p/20200423/EHtPtQbogsDfqmn.jpg!a-3-800x.jpg" width="160" height="90" alt="休闲模拟器游戏《王牌班主任》 即将在Steam上推出">
+              </a>
+            </div>
+            <div class="art-txt">
+              <div class="tit">
+                <a href="//www.2p.com/article/282947" target="_blank">休闲模拟器游戏《王牌班主任》 即将在Steam上推出</a>
+              </div>
+              <div class="desc">作为现在或曾经只是学生的你，免不了在班主任的威严下变得乖巧可爱，对班主任的认知有可能仅限于&ldquo;窗后凝视&rdquo;，中间隔了一层纱。如今，你来做班主任，来体验下对班级管理事必躬亲是何种滋味。</div>
+              <div class="time">
+                <span v-show="timeDiffWithPast('2020-04-23 14:56:25')" style="display:none;">{{timeDiffWithPast('2020-04-23 14:56:25')}}</span>
+              </div>
+            </div>
+          </li>
+              </ul>
+    </div>
+  </div>
+</div>        <e-dialog ref="bindMobileDialog" :visible.sync="bindMobileVisible" v-show="bindMobileVisible" style="display:none;">
+        <div slot="dialog-in">
+            <div class="dialog-hd">
+                <div class="tit">
+                    提示
+                </div>
+            </div>
+            <div class="dialog-bd">
+            <div class="txt-box">
+                <p>你需要绑定手机后才能继续发表内容</p> 
+            </div>
+            <div class="form-item ex">
+                <a class="btn-submit" target="_blank" style="line-height:42px;" href="https://passport.17173.com/safe/mobile/index">绑定手机</a>
+            </div>
+            </div>
+        </div>
+        </e-dialog>
+    </div>
+    
+  <footer ref="footer" class="footer home">
+          <div class="pn-in">
+        <div class="footer-c1">
+          <div class="logo-box">
+            <img src="//ue.2pcdn.com/b/lib/logo/normal-dark.png" alt="2p">
+            <p>媒体、社区、发行，<br>2P和你一起玩!</p>
+          </div>
+        </div>
+        <div class="footer-c2">
+          <div class="mod-hd">
+            <div class="tit">友情链接</div>
+          </div>
+          <div class="mod-bd">
+            <ul class="logo-list">
+              <li>
+                <a href="https://www.17173.com/" target="_blank">
+                  <img src="https://ue.2pcdn.com/b/epic/v2.2.004/img/717f8fe9aaf6aba43a4fa26096f4bd7f.png" alt="17173">
+                </a>
+              </li>
+              <li>
+                <a href="https://store.playstation.com" target="_blank">
+                  <img src="https://ue.2pcdn.com/b/epic/v2.2.004/img/f3d8d79cb9ffd0bdf66ee50a2c5dd920.png" alt="psp">
+                </a>
+              </li>
+              <li>
+                <a href="https://www.xbox.com/" target="_blank">
+                  <img src="https://ue.2pcdn.com/b/epic/v2.2.004/img/706c9eabca5745fa8aea7e327b59ad62.png" alt="xbox">
+                </a>
+              </li>
+              <li>
+                <a href="https://store.steampowered.com/" target="_blank">
+                  <img src="https://ue.2pcdn.com/b/epic/v2.2.004/img/0de988a356e662e9b6124060dbf7ea6f.png" alt="steam">
+                </a>
+              </li>
+              <li>
+                <a href="https://www.gog.com/" target="_blank">
+                  <img src="https://ue.2pcdn.com/b/epic/v2.2.004/img/f2e3acc6efaddfcc54130a8c57b3beee.png" alt="gog">
+                </a>
+              </li>
+              <li>
+                <a href="https://wegame.com/store" target="_blank">
+                  <img src="https://ue.2pcdn.com/b/epic/v2.2.004/img/89831b5921e532f6ee730b514a581480.png" alt="wegame">
+                </a>
+              </li>
+              <li>
+                <a href="https://www.sonkwo.com/" target="_blank">
+                  <img src="https://ue.2pcdn.com/b/epic/v2.2.004/img/48cfdf95f3062eecff20b3fd3a1bc170.png" alt="sankwo">
+                </a>
+              </li>
+              <li>
+                <a href="http://www.cubejoy.com/" target="_blank">
+                  <img src="https://ue.2pcdn.com/b/epic/v2.2.004/img/52c930c9d114e09a1cf71702c777b76d.png" alt="fk">
+                </a>
+              </li>
+              <li>
+                <a href="http://www.fhyx.com/" target="_blank">
+                  <img src="https://ue.2pcdn.com/b/epic/v2.2.004/img/5abe70de1d81ecb451e5cc6a99c44b46.png" alt="fhyx">
+                </a>
+              </li>
+              <li>
+                <a href="https://www.ubisoft.com.cn/" target="_blank">
+                  <img src="https://ue.2pcdn.com/b/epic/v2.2.004/img/83f8159c6c21128f759c5a4bef43a72e.png" alt="ubisoft">
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-c3">
+          <div class="mod-hd">
+            <div class="tit">加入萤火虫</div>
+          </div>
+          <div class="mod-bd">
+            <ul class="contact-list">
+              <li class="weibo">
+                <a href="https://weibo.com/17173firefly?is_hot=1" target="_blank">
+                  <div class="logo">
+                    <img src="https://ue.2pcdn.com/b/epic/v2.2.004/img/b6ce552a3d06348016596fbec7d14217.png" alt="weibo">
+                  </div>
+                  <div class="txt">
+                    <p class="t1">官方微博</p>
+                    <p class="t2">17173萤火虫</p>
+                  </div>
+                </a>
+              </li>
+              <li class="qq">
+                <a href="https://jq.qq.com/?_wv=1027&k=5F6fn1U" target="_blank">
+                  <div class="logo">
+                    <img src="https://ue.2pcdn.com/b/epic/v2.2.004/img/d2f9ef343defeed52739bc412ca4816f.png" alt="qq">
+                  </div>
+                  <div class="txt">
+                    <p class="t1">QQ群</p>
+                    <p class="t2">862135245</p>
+                  </div>
+                </a>
+              </li>
+              <li class="steam">
+                <a href="https://store.steampowered.com/curator/31716674/" target="_blank">
+                  <div class="logo">
+                    <img src="https://ue.2pcdn.com/b/epic/v2.2.004/img/edbaf98992def0e0dd786896f08205be.png" alt="steam">
+                  </div>
+                  <div class="txt">
+                    <p class="t1">Steam鉴赏家</p>
+                    <p class="t2">17173萤火虫</p>
+                  </div>
+                </a>
+              </li>
+              <li class="steam">
+                <a href="http://steamcommunity.com/groups/17173firefly" target="_blank">
+                  <div class="logo">
+                    <img src="https://ue.2pcdn.com/b/epic/v2.2.004/img/edbaf98992def0e0dd786896f08205be.png" alt="steam">
+                  </div>
+                  <div class="txt">
+                    <p class="t1">Steam组</p>
+                    <p class="t2">17173萤火虫</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+        <div class="copy-right"> 
+      <p class="contact">商务联系 QQ：<a href="//wpa.qq.com/msgrd?v=3&uin=20581504&site=qq&menu=yes " target="_blank">20581504</a><span class="sep">|</span>邮箱：Chenzhong_17173@cyou-inc.com</p>
+      <p class="right">Copyright&copy;2001-<span class="cur-year">2020</span> 17173. All rights reserved.<span class="sep">|</span><a href="http://beian.miit.gov.cn/" target="_blank" style="color: #585c62;font-size: 12px;">京ICP备11007422号-58</a><span class="sep">|</span>京网文（2017）10784-1260号</p>
+    </div>
+  </footer>
+    </div>
+    <script src="//s.ue.17173cdn.com/a/lib/passport/v2/js/passport.js"></script>
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"></script>
+                    <script src="https://ue.2pcdn.com/b/epic/v2.2.004/js/vendor.937994a63e.js"></script>
+        <script src="https://ue.2pcdn.com/b/epic/v2.2.004/js/common.937994a63e.js"></script>    
+    <script src="https://ue.2pcdn.com/b/epic/v2.2.004/js/site-index.937994a63e.js"></script>
+      <script type="text/javascript" src="//js.17173.com/ping.js"></script>
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?cd042bcfcc5011fdbc88573b5af955a2";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+  <script>
+  (function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+  </script>
+</body>
+</html>

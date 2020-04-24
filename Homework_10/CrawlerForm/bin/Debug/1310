@@ -1,0 +1,443 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin" />
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>智识训练营 - 博客园</title>
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=-oFz8B4m7JhHaZzdTkzPza2oLZNDRR8obnCz6w7OHbU" />
+    <link id="MainCss" rel="stylesheet" href="/skins/simpleclear/bundle-simpleclear.min.css?v=IiBSeUvh0y1hLfcJsciURz9X2PcgCGcGfOyKtwwvZ00" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/simpleclear/bundle-simpleclear-mobile.min.css?v=DidnFOvv24-VeVpMoJxhxZWs9iNA_ZwNuLjfe3iZZR8" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/bootcamp/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/bootcamp/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/bootcamp/wlwmanifest.xml" />
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=z6JkvKQ7L_bGD-nwJExYzsoFf5qnluqZJru6RsfoZuM"></script>
+    <script>
+        var currentBlogId = 534897;
+        var currentBlogApp = 'bootcamp';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var skinName = 'SimpleClear';
+    </script>
+    
+    
+    
+</head>
+<body>
+    <a name="top"></a>
+    
+    <div id="main">
+    <div id="header">
+        
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/bootcamp/">智识训练营</a>
+</h1>
+<p id="tagline">
+
+</p>
+
+
+    </div>
+    
+
+
+
+
+		
+
+<!--
+<p class="date">
+	<a href="https://www.cnblogs.com/bootcamp/archive/2020/04/24.html" style="display:inline-block;border-width:0px;height:15px;width:12px;"></a>
+
+	<partial name="./Shared/_DateTitle.cshtml"/>		  
+</p>
+-->
+
+		<div class="post">
+			<h2 class="postTitle">
+
+<a class="postTitle2" href="https://www.cnblogs.com/bootcamp/p/12768446.html">
+    Java并发编程之不变性与安全发布
+</a>
+</h2>
+			<div class="postText">
+			
+
+    <div class="c_b_p_desc">
+摘要：1、不变性 如果某个对象在被创建后其状态就不能被修改，那么这个对象就被称为不可变对象。满足同步需求的另一种方法就是使用不可变对象。不可变对象一定是线程安全的。当满足以下条件时，对象才是不可变的： 对象创建以后其状态就不能改变 对象的所有域都是final类型 对象是正确创建的，在对象创建期间，this            <a href="https://www.cnblogs.com/bootcamp/p/12768446.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>				
+			<div class="postFoot">		
+				
+
+posted @ 2020-04-24 16:43 智识训练营 阅读 (2) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12768446" rel="nofollow">
+    编辑
+</a>
+
+			</div>
+		</div>
+
+
+
+		
+
+<!--
+<p class="date">
+	<a href="https://www.cnblogs.com/bootcamp/archive/2020/04/21.html" style="display:inline-block;border-width:0px;height:15px;width:12px;"></a>
+
+	<partial name="./Shared/_DateTitle.cshtml"/>		  
+</p>
+-->
+
+		<div class="post">
+			<h2 class="postTitle">
+
+<a class="postTitle2" href="https://www.cnblogs.com/bootcamp/p/12744794.html">
+    利用Win32 Disk Imager 实现U盘刻录ISO
+</a>
+</h2>
+			<div class="postText">
+			
+
+    <div class="c_b_p_desc">
+摘要：近日电脑需要安装Linux系统（CentOS、Kali），由于无光驱，需要把操作系统ISO镜像写入到U盘。于是找到Win32 Disk Imager(下载地址为：https://sourceforge.net/projects/win32diskimager/)。 下载后，在Win10环境下进行安装            <a href="https://www.cnblogs.com/bootcamp/p/12744794.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>				
+			<div class="postFoot">		
+				
+
+posted @ 2020-04-21 15:10 智识训练营 阅读 (10) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12744794" rel="nofollow">
+    编辑
+</a>
+
+			</div>
+		</div>
+		<div class="post">
+			<h2 class="postTitle">
+
+<a class="postTitle2" href="https://www.cnblogs.com/bootcamp/p/12744681.html">
+    Win32 Disk Imager刻录过的U盘恢复容量的方法
+</a>
+</h2>
+			<div class="postText">
+			
+
+    <div class="c_b_p_desc">
+摘要：近日遇到一个问题，使用Win32 Disk Imager刻录过的U盘，想恢复使用，但无法正常使用。 按WIN+R键调出Win10运行框，输入diskmgmt.msc，打开磁盘管理工具。 看到U盘的状况（如下图示），想删除ANACONDA，点击右键全部操作项变灰，无法进行。 接着对未分配的3.69GB            <a href="https://www.cnblogs.com/bootcamp/p/12744681.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>				
+			<div class="postFoot">		
+				
+
+posted @ 2020-04-21 14:56 智识训练营 阅读 (15) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12744681" rel="nofollow">
+    编辑
+</a>
+
+			</div>
+		</div>
+		<div class="post">
+			<h2 class="postTitle">
+
+<a class="postTitle2" href="https://www.cnblogs.com/bootcamp/p/12744526.html">
+    CentOS7.6中安装使用fcitx框架
+</a>
+</h2>
+			<div class="postText">
+			
+
+    <div class="c_b_p_desc">
+摘要：内容目录 一、为什么要使用fcitx?二、安装fcitx框架三、安装搜狗输入法 一、为什么要使用fcitx? Gnome3桌面自带的输入法框架为ibus，而在使用ibus时会时不时出现卡顿无法输入的现象。 搜狗和谷歌输入法等使用的是fcitx框架。 而ibus会造成fcitx无法正常启动,所以我们需            <a href="https://www.cnblogs.com/bootcamp/p/12744526.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>				
+			<div class="postFoot">		
+				
+
+posted @ 2020-04-21 14:40 智识训练营 阅读 (8) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12744526" rel="nofollow">
+    编辑
+</a>
+
+			</div>
+		</div>
+
+
+
+		
+
+<!--
+<p class="date">
+	<a href="https://www.cnblogs.com/bootcamp/archive/2020/04/20.html" style="display:inline-block;border-width:0px;height:15px;width:12px;"></a>
+
+	<partial name="./Shared/_DateTitle.cshtml"/>		  
+</p>
+-->
+
+		<div class="post">
+			<h2 class="postTitle">
+
+<a class="postTitle2" href="https://www.cnblogs.com/bootcamp/p/12738751.html">
+    Thinkpad E490 无法安装CentOS7.6的解决方法
+</a>
+</h2>
+			<div class="postText">
+			
+
+    <div class="c_b_p_desc">
+摘要：前阵计划在Thinkpad E490笔记本电脑上安装多系统（Windows、CentOS、Kali），用作技术研究。 系统出厂自带Windows10，入手后迫不及待地准备加装CentOS7系统。于是下载了CentOS7.6.1810完全版镜像（CentOS-7-x86_64-Everything-1            <a href="https://www.cnblogs.com/bootcamp/p/12738751.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>				
+			<div class="postFoot">		
+				
+
+posted @ 2020-04-20 16:47 智识训练营 阅读 (17) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12738751" rel="nofollow">
+    编辑
+</a>
+
+			</div>
+		</div>
+		<div class="post">
+			<h2 class="postTitle">
+
+<a class="postTitle2" href="https://www.cnblogs.com/bootcamp/p/12738663.html">
+    图解KVM安装CentOS7.6操作系统
+</a>
+</h2>
+			<div class="postText">
+			
+
+    <div class="c_b_p_desc">
+摘要：近日服务器安装了CentOS7.6系统，装了KVM，想装Linux虚拟服务器使用。本文图解说明KVM安装CentOS7.6操作系统的过程（介绍图形界面安装方式。命令行安装方式有空再写文介绍）。 一、采用虚拟化图形管理工具进行配置 打开虚拟化图形管理工具virt-manager，点击&quot;Create a            <a href="https://www.cnblogs.com/bootcamp/p/12738663.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>				
+			<div class="postFoot">		
+				
+
+posted @ 2020-04-20 16:37 智识训练营 阅读 (19) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12738663" rel="nofollow">
+    编辑
+</a>
+
+			</div>
+		</div>
+		<div class="post">
+			<h2 class="postTitle">
+
+<a class="postTitle2" href="https://www.cnblogs.com/bootcamp/p/12738376.html">
+    Java并发编程之Volatile关键字
+</a>
+</h2>
+			<div class="postText">
+			
+
+    <div class="c_b_p_desc">
+摘要：Java语言提供了一种稍弱的同步机制，即volatile变量，用来确保将变量的更新操作通知到其他线程。当把变量声明为volatile类型后，编译器与运行时都会注意到这个变量是共享的，因此不会将该变量上的操作与其他内存操作一起重排序。volatile变量不会被缓存在寄存器或者对其他处理器不可见的地方，            <a href="https://www.cnblogs.com/bootcamp/p/12738376.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>				
+			<div class="postFoot">		
+				
+
+posted @ 2020-04-20 16:03 智识训练营 阅读 (15) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12738376" rel="nofollow">
+    编辑
+</a>
+
+			</div>
+		</div>
+		<div class="post">
+			<h2 class="postTitle">
+
+<a class="postTitle2" href="https://www.cnblogs.com/bootcamp/p/12738251.html">
+    Java并发编程之wait()、notify()和notifyAll()
+</a>
+</h2>
+			<div class="postText">
+			
+
+    <div class="c_b_p_desc">
+摘要：Java有一个内建的等待机制来允许线程在等待信号的时候变为非运行状态。java.lang.Object类定义了三个方法，wait()、notify()和notifyAll()来实现这个等待机制。 一个线程一旦调用了任意对象的wait()方法，就会变为非运行状态，直到另一个线程调用了同一个对象的not            <a href="https://www.cnblogs.com/bootcamp/p/12738251.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>				
+			<div class="postFoot">		
+				
+
+posted @ 2020-04-20 15:48 智识训练营 阅读 (7) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12738251" rel="nofollow">
+    编辑
+</a>
+
+			</div>
+		</div>
+
+
+
+		
+
+<!--
+<p class="date">
+	<a href="https://www.cnblogs.com/bootcamp/archive/2020/04/18.html" style="display:inline-block;border-width:0px;height:15px;width:12px;"></a>
+
+	<partial name="./Shared/_DateTitle.cshtml"/>		  
+</p>
+-->
+
+		<div class="post">
+			<h2 class="postTitle">
+
+<a class="postTitle2" href="https://www.cnblogs.com/bootcamp/p/12726309.html">
+    图解安装CentOS8
+</a>
+</h2>
+			<div class="postText">
+			
+
+    <div class="c_b_p_desc">
+摘要：去年发布了CentOS8！迫不及待地准备下载了CentOS8镜像，准备体验下，工作繁忙无暇理会。 今天抽空安装体验下～ 可从CentOS官网下载：https://centos.org/download/ 为了快速可以选择从国内镜像下载。 下载后，如果是物理安装，需要使用Win32 Disk Imag            <a href="https://www.cnblogs.com/bootcamp/p/12726309.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>				
+			<div class="postFoot">		
+				
+
+posted @ 2020-04-18 15:55 智识训练营 阅读 (22) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12726309" rel="nofollow">
+    编辑
+</a>
+
+			</div>
+		</div>
+		<div class="post">
+			<h2 class="postTitle">
+
+<a class="postTitle2" href="https://www.cnblogs.com/bootcamp/p/12726085.html">
+    CentOS8.1.1911正式发布！
+</a>
+</h2>
+			<div class="postText">
+			
+
+    <div class="c_b_p_desc">
+摘要：前阵子，CentOS官方宣布：CentOS8.1.1911正式发布！已经安装CentOS8.0的朋友，可以执行yum update更新（笔者更新了2次），体验下新版本！如是新安装，可以从官方网站下载http://isoredirect.centos.org/centos/8/isos/x86_64/            <a href="https://www.cnblogs.com/bootcamp/p/12726085.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+			</div>				
+			<div class="postFoot">		
+				
+
+posted @ 2020-04-18 15:24 智识训练营 阅读 (130) 评论 (0)
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12726085" rel="nofollow">
+    编辑
+</a>
+
+			</div>
+		</div>
+
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/bootcamp/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+
+
+</div>
+<div id="rightmenu">
+    
+<div id="my_links">
+<h3>导航</h3>
+<ul>
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/bootcamp/">
+首页</a>
+</li>
+
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E6%99%BA%E8%AF%86%E8%AE%AD%E7%BB%83%E8%90%A5">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/bootcamp/rss/">
+订阅</a></li><!--<partial name="./Shared/_XmlLink.cshtml" model="Model" />-->
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+</div>
+
+
+    <div id="calendar">
+        <div id="blog-calendar" style="display: none"></div>
+    </div>
+    <script>loadBlogDefaultCalendar();</script>
+    
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+
+    <div id="blog_stats">
+<h3>统计</h3>
+<ul>
+<li>随笔 - 
+14</li>
+<li>文章 - 
+1</li>
+<li>评论 - 
+0
+<!--<li>引用 - <partial name="./Shared/_PingTrackCount.cshtml" model="BlogServer.Web.Models.HomeBlogPage" />-->
+</li>
+</ul>
+</div>
+
+
+    <div id="blog-sidecolumn"></div>
+    <script>loadBlogSideColumn();</script>
+    <div id="footer">
+	Powered by: 
+	<br />
+	
+	
+<a href="https://www.cnblogs.com/" id="Footer1_Hyperlink3" style="font-size: 12px; font-family: Verdana">博客园</a>
+	<br />
+	Copyright &copy; 2020 智识训练营
+<br /><span id="poweredby">Powered by .NET Core on Kubernetes</span>
+
+</div>
+
+
+</div>
+    
+</body>
+</html>
