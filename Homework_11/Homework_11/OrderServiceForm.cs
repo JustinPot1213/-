@@ -48,12 +48,7 @@ namespace Homework_8
             orderService.AddOrder(order_1);
             orderService.AddOrder(order_2);
 
-            using (var db = new OrderContext())
-            {
-                var allOrders = db.Orders.OrderBy(order=>order.OrderID);
-                
-                orderBindingSource.DataSource = allOrders.ToList<Order>();
-            }
+            orderBindingSource.DataSource = orderService.GetAllOrders();
 
         }
 

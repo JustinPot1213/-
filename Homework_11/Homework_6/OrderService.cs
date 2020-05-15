@@ -182,7 +182,7 @@ namespace Homework_5
             {
                 StringBuilder str = new StringBuilder();
                 str.Append("订单列表：" + "\n\n");
-                foreach (var o in db.Orders)
+                foreach (var o in AllOrders(db))
                 {
                     str.Append(o.ToString());
                 }
@@ -211,5 +211,18 @@ namespace Homework_5
         }
         */
 
+        public IQueryable<Order> AllOrders(OrderContext db)
+        {
+            return db.Orders.Include("OrderItems")
+                            .Include("Buyer"); 
+        }
+
+        public List<Order> GetAllOrders()
+        {
+            using (var db = new OrderContext())
+            {
+                return AllOrders(db).ToList();
+            }
+        }
     }
 }

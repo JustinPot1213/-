@@ -15,7 +15,7 @@ namespace Homework_5
         //[XmlArray]
         public IList<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
         //[XmlElement(Type = typeof(Buyer))]
-        public virtual Buyer Buyer { get; set; }
+        public Buyer Buyer { get; set; }
         //[XmlAttribute]
         public long OrderID { get; set; }
         //[XmlAttribute]
@@ -95,11 +95,12 @@ namespace Homework_5
             {
                 StringBuilder orderStr = new StringBuilder();
                 orderStr.Append("订单号为" + OrderID + "\n");
-                foreach (OrderItem item in OrderItems)
-                {
+                foreach (var item in db.OrderItems)
+                {/*
                     orderStr.Append("    " + item.ThisItem.Name + " ￥" +
                         item.ThisItem.Price.ToString() + " *" +
                         item.Num + "共计￥" + item.SumOfPrice + "\n");
+                        */
                 }
                 orderStr.Append("订单总计花费 ￥" + SumOfCost + "\n\n");
                 return orderStr.ToString();
